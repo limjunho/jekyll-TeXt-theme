@@ -16,7 +16,7 @@ Android Programming을 할 때 알아야 할 LifeCycle(생명주기)에 대한 �
 
 ---
 
-![그림1](/assets/Android/LifeCycle/1.png)  
+![그림1](/assets/Android/LifeCycle/1.PNG)  
 위의 그림이 생명주기로 위에서 아래가 순서이고 가장 마지막의 shut down이 어플리케이션의 종료이다.  
 
 파란색 박스가 메소드들인데 크게 3가지로 구분하면 실행전, 종료전, 재시작으로 구분할 수 있다.  

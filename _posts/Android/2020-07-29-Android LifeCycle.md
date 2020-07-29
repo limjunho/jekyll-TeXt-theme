@@ -33,7 +33,7 @@ Activity를 사용자에게 보여줄 준비가 되었을 때 호출한다. 주�
 
 **onResume()**  
 Activity가 화면의 포그라운드에 있고 사용자에게 포커스를 가지고 있는 상태이다. 즉 실행중인 상태.  
-사용자와 상호작용할 수 있는 코드들을 주로 작성. ex) 버튼 클릭, 토스트메시지  
+사용자와 상호작용할 수 있는 코드들을 주로 작성. ex) Button Click, Toast message 
 
 <br />
 종료전 - onPause(), onStop(), onDestroy()  
@@ -55,7 +55,7 @@ Activity가 종료되는 경우는 여러가지 이유가 있는데 사용자가
 액티비티가 받는 가장 마지막 호출이다.  
 
 각 메소드들이 언제 호출되는지 확인하기 위해 Log와 Toast  message를 띄우는 예제  
-[LifeCycle 예제](https://github.com/limjunho/Android/tree/master/LifeCycle_ex) click this
+[LifeCycle 예제](https://github.com/limjunho/Android/tree/master/LifeCycle_ex) click this  
 위의 그림을 보면서 뒤로가기, 홈버튼 등등 여러 동작을 수행해보면 이해하기 쉽다.  
 
-**화면을 가로방향 세로방향을 바꾸면 onDestroy가 호출되고 다시 onCreate가 호출된다.**  
+**화면의 가로방향 세로방향을 바꾸면 onDestroy가 호출되고 다시 onCreate가 호출된다.**  

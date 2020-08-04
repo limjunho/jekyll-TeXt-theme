@@ -35,6 +35,9 @@ Format을 변경하는 것 만으로 년,월,일 또는 년,월,일,시,분 등 
 
 **ex) SimpleDateFormat Format = new SimpleDateFormat("yyyy-mm-dd); -> 년,월,일**  
 
+![그림1](/assets/Android/CurrentTime/1.jpg)  
+**예제 실행결과**  
+
 다양한 형태로 현재 시간을 가져오는 예제    
 [Current time example](https://github.com/limjunho/Android/tree/master/Time_ex) click this  
  

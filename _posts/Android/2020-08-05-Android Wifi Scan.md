@@ -13,7 +13,7 @@ Android로 주변 AP를 스캔하고 AP의 정보를 얻어오는 예제이다.
 
 ---
 
-![그림1](/assets/Android/WifiScan/1.PNG)  
+![그림1](/assets/Android/WifiScan/jpg)  
 **위의 그림은 예제 실행 결과이다.**  
 
 Android에서 Wifi를 스캔하기 위해 제공하는 라이브러리로 WifiManager가 있다.  
@@ -46,7 +46,7 @@ WifiManager.startScan()을 사용하는 스캔 빈도에 다음과 같은 제한
 **Android 10 이상:**  
 Android 9와 동일한 사용 제한이 적용된다. 로컬 테스트를 위해 사용 제한을 해제하는 새로운 개발자 옵션이 추가되었다.  
 (Developer Options > Networking > Wi-Fi scan throttling **off**).  
-![그림2](/assets/Android/WifiScan/2.PNG)  
+![그림2](/assets/Android/WifiScan/2.jpg)  
 
 ### Scan Process  
 <br />

@@ -13,7 +13,7 @@ Android로 주변 AP를 스캔하고 AP의 정보를 얻어오는 예제이다.
 
 ---
 
-![그림1](/assets/Android/WifiScan/jpg)  
+![그림1](/assets/Android/WifiScan/1.jpg)  
 **위의 그림은 예제 실행 결과이다.**  
 
 Android에서 Wifi를 스캔하기 위해 제공하는 라이브러리로 WifiManager가 있다.  

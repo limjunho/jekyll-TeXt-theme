@@ -76,3 +76,6 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
 주기적(10초)으로 주변 AP를 스캔하여 AP의 정보를 가져와 스크롤뷰에 띄우는 예제  
 [Wifi Scan Example](https://github.com/limjunho/Android/tree/master/Wifi_Scan_ex) click this  
+
+**참고 사이트**  
+https://developer.android.com/guide/topics/connectivity/wifi-scan?hl=ko  

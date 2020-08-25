@@ -1,6 +1,6 @@
 ---
 title: Raspberry Pi AP(Access Point)만들기
-tags: Embedded board
+tags: Embeddedboard
 ---
 
 라즈베리파이를 AP로 만드는 방법을 소개한다.  

@@ -139,16 +139,16 @@ sudo systemctl start hostapd
 **설정을 저장하고 부팅 시 자동으로 hostapd를 시작하기 위한 내용이다.**  
 
 <br />
-![그림1](/assets/Embedded_board/RPI_to_AP/1.jpg){: width="70% height="70%"}  
+![그림1](/assets/Embedded_board/RPI_to_AP/1.jpg){: width="50% height="50%"}  
 
 **AP가 정상적으로 작동 확인**  
 
 <br />
-![그림2](/assets/Embedded_board/RPI_to_AP/2.jpg){: width="70% height="70%"}    
+![그림2](/assets/Embedded_board/RPI_to_AP/2.jpg){: width="50% height="50%"}    
 
 **AP에 연결**    
 
 <br />
-![그림3](/assets/Embedded_board/RPI_to_AP/3.jpg){: width="70% height="70%"}   
+![그림3](/assets/Embedded_board/RPI_to_AP/3.jpg){: width="50% height="50%"}   
 
 **AP에 연결 확인**  

@@ -1,5 +1,5 @@
 ---
-title: MySql insert example(Python)
+title: MySql Insert example(Python)
 tags: MySql, Python
 ---
 

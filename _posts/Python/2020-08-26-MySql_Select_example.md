@@ -1,5 +1,5 @@
 ---
-title: MySql Select example
+title: MySql Select example(Python)
 tags: MySql, Python
 ---
 

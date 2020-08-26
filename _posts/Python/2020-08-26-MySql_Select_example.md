@@ -35,7 +35,7 @@ fetchmany(n) - n개 만큼의 데이터를 가져올 때 사용
 5-2. 삽입, 갱신, 삭제 등의 DML(Data Manipulation Language)문장을 실행하는 경우 Connection 객체의  
 commit()메서드로 데이터를 확정 갱신  
 
-7\. Connection 객체의 close() 메서드를 사용하여 DB 연결을 종료  
+6\. Connection 객체의 close() 메서드를 사용하여 DB 연결을 종료  
 
 
 <br />

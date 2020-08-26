@@ -1,5 +1,5 @@
 ---
-title: Linux filename 일괄 변경 툴(Python)
+title: MySql Select example
 tags: MySql, Python
 ---
 

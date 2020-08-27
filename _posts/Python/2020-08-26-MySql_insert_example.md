@@ -1,6 +1,6 @@
 ---
 title: MySql Insert example(Python)
-tags: MySql, Python
+tags: MySql Python
 ---
 
 Python 코드상에서 DB에 접속하여 데이터를 삽입하는 예제  

@@ -1,6 +1,6 @@
 ---
 title: MySql Select example(Python)
-tags: MySql, Python
+tags: MySql Python
 ---
 
 DB에서 데이터를 가져와 코드상에서 활용하는 경우를 위한 예제

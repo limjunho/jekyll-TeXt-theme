@@ -17,7 +17,7 @@ Python의 dict를 JSON형식으로 매핑하는 예제이다.
 **JSON 표준은 유니코드 처리 방식이 다르므로 한글 등을 처리시 유의해야 한다.**  
 
 ###Python 딕셔너리를 JSON형식으로 변환  
-```Python
+```python
 import json
 
 data = {'number':'1', 'data1':'abc', 'data2':'def'}
@@ -25,7 +25,7 @@ jsonform = json.dumps(data)
 ```
 
 ###JSON 문자열을  Python 딕셔너리로 변환  
-```Python
+```python
 import json
 
 data = '{"number":"1", "data1":"abc", "data2":"def"}'

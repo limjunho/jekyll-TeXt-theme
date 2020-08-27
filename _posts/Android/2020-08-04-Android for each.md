@@ -1,6 +1,6 @@
 ---
 title: JAVA for each(for문 향상버전)
-tags: JAVA, Android
+tags: JAVA Android
 ---
 
 JAVA에서 뿐만 아니라 다양한 언어에서 for문은 굉장히 많이 사용되는 반복문이다.  

@@ -49,3 +49,6 @@ mysql> delete from tablename where number <=2 or data = "test";
 mysql> delete from tablename;
 ```
 **전체 레코드를 삭제**  
+
+[Python DB에 데이터 삽입 예제](https://limjunho.github.io/2020/08/26/MySql_insert_example.html)  
+[Python DB 데이터 읽어오는 예제](https://limjunho.github.io/2020/08/26/MySql_Select_example.html)  

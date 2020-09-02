@@ -22,7 +22,7 @@ DownloadManager를 이용해 HTTP파일을 다운로드 받는 방법
 ### UI 및 권한  
 
 **UI**  
-![그림1](/assets/Android/DownloadManager/1.jpg)  
+![그림1](/assets/Android/DownloadManager/1.jpg){: width="50% height="50%"}  
 uri를 입력하여 다운로드 버튼을 클릭하면 다운로드를 시작한다.  
 
 **권한**  

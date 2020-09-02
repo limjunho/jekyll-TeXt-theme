@@ -36,6 +36,6 @@ uri를 입력하여 다운로드 버튼을 클릭하면 다운로드를 시작�
 **DownloadManager는 다운로드 요청이 완료되면 브로드캐스트로 결과를 전달하기 때문에 브로드캐스트 리시버를 구현해야 한다.**  
 
 ### 참고자료  
-[developers](https://developer.android.com/reference/android/app/DownloadManager#COLUMN_LOCAL_URI)
-[codechacha_github](https://github.com/codechacha/DownloadManager)
-[codechacha_blog](https://codechacha.com/ko/android-downloadmanager/)
+[developers](https://developer.android.com/reference/android/app/DownloadManager#COLUMN_LOCAL_URI)  
+[codechacha_github](https://github.com/codechacha/DownloadManager)  
+[codechacha_blog](https://codechacha.com/ko/android-downloadmanager/)  

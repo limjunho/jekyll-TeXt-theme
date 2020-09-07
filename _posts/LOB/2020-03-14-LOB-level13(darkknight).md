@@ -68,7 +68,7 @@ main(int argc, char *argv[])
 **기존의 공격에서는 argv[1][44]부터 argv[1][47]까지 buffer의 주소 또는 환경변수의 주소등 스택을 사용하였다.**  
 **Stack은 0xbfffxxxx로 시작하기 때문에 Stack의 값을 이용하여 문제를 해결할 수 없다.**  
 3. main에 전달받은 인자 argv[1]을 buffer에 복사하여 출력하는 소스(argv[0]은 파일명)  
-**strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 256Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
+**strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 40Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
 
 ### Solution  
 **RTL(Return to Library)기법 사용**  

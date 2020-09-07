@@ -16,6 +16,12 @@ LOB란 The Lord of the BOF의 약자로 Buffer over-flow를 연습해 볼 수 �
 **ID : gate**  
 **PASSWD : gate**         
 
+```bash
+$ bash2
+```
+풀이 시작 전에 bash2로 꼭 변경  
+**bash는 \xff를 \x00(NULL)로 인식하여 제대로 문제를 풀 수 없다.**  
+
 ![그림1](/assets/LOB/level1/1.PNG)  
 사용자 gremlin의 권한의 gremlin파일이 있음을 확인할 수 있다.  
 **set-uid가 걸려있으므로 사용자 gremlin의 권한으로 파일을 실행할 수 있다.**  

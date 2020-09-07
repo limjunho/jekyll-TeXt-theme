@@ -59,7 +59,7 @@ main(int argc, char *argv[])
 }
 {% endhighlight %}  
 
-**gremlin.c**
+**bugbear.c**
 
 ### 소스분석  
 1. argc가 2보다 작다면 "ergv error"을 출력하고 프로그램을 종료한다.  
@@ -67,7 +67,7 @@ main(int argc, char *argv[])
 2. argv[1][47]의 값이 \xbf인 경우 "stack betrayed you!!"를 출력하고 프로그램을 종료한다.  
 **기존의 공격에서는 argv[1][44]부터 argv[1][47]까지 buffer의 주소 또는 환경변수의 주소등 스택을 사용하였다.**  
 **Stack은 0xbfffxxxx로 시작하기 때문에 Stack의 값을 이용하여 문제를 해결할 수 없다.**  
-3. main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하여 출력하는 소스  
+3. main에 전달받은 인자 argv[1]을 buffer에 복사하여 출력하는 소스(argv[0]은 파일명)  
 **strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 256Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
 
 ### Solution  
@@ -78,7 +78,8 @@ main의 ret에 Library 함수의 주소를 덮는 방법으로 코드에서 사�
 **ret에 system함수의 주소를 덮어 system함수가 /bin/sh를 실행하도록 프로그램 흐름을 조작**  
 
 **RTL을 사용하는 이유?**  
-DEP(Data Execution Protection)라는 방어기법 때문에 RTL을 사용하는데 DEP란 스택,힙 같은 영역에 있는 코드가 w권한 x권한을 동시에 갖지않도록 차단하는 기법이다.  
+DEP(Data Execution Protection)라는 방어기법 때문에 RTL을 사용하는데 DEP란 스택,힙 같은 영역에 있는 코드가  
+w권한 x권한을 동시에 갖지않도록 차단하는 기법이다.  
 
 
 ![그림2](/assets/LOB/level13/2.png)  
@@ -86,7 +87,7 @@ gdb로 분석할 때 권한으로부터 자유롭기 위해 bugbear를 복사한
 
 ### disassemble  
 
-**쉘코드의 주소는 buffer의 시작주소가 될 것이기 때문에 buffer의 시작 주소를 얻기 위해 디버깅을 한다.**  
+**스택구조를 파악하기 위해 디버깅을 한다.**  
 권한문제가 없도록 gremlin를 복사하고 gdb를 사용하여 intel방식으로 디스어셈블 한다.  
 ![그림3](/assets/LOB/level13/3.png)  
 disassemble 결과  
@@ -140,39 +141,8 @@ ex) 0xbffffc11을 리틀 엔디안 방식으로 저장하면 11cfffbf가 된다.
 명령으로 나오는 값이 1이라면 리틀 엔디안, 0이라면 빅엔디안이다.  
 
 ![그림7](/assets/LOB/level13/7.png)  
+**페이로드**  
+```bash
+./bugbear `python -c "print 'A'*44 + '\xe0\x8a\x05\x40' + 'A'*4 + '\xf9\xbf\x0f\x40'"`
+```
 공격 성공  
-
-**why?**  
-gdb를 이용하여 디버깅을 하게 되면 한번 복사되어 들어가기 때문에 실제 프로세스 주소와 차이가 있다.  
-
-{% highlight C linenos %}  
-#include <stdio.h>
-
-int main(int argc, char *argv[])
-{
-    char buffer[256];
-    if(argc < 2){
-        printf("argv error\n");
-        exit(0);
-    }
-    strcpy(buffer, argv[1]);
-    printf("%s\n", buffer);
-    printf("%x\n", buffer);
-}
-
-{% endhighlight %} 
-
-![그림5](/assets/LOB/level1/5.PNG)   
-**gcc는 컴파일러로 -o옵션은 생성할 바이너리파일의 이름을 지정한다.**   
-get_addr.c를 컴파일하여 생성할 파일의 이름은 get_addr로 짓도록 하는 명령  
-
-
-![그림6](/assets/LOB/level1/6.PNG)   
-다시 알아낸 buffer의 주소를 대입하여 공격, 성공적으로 grimlin의 bash를 획득하였다.  
-
-
-**리틀 엔디안은 최 하위 바이트 부터 저장하는 방식이다.**  
-ex) 0xbffffc11을 리틀 엔디안 방식으로 저장하면 11cfffbf가 된다.  
-보통 엔디안 방식은 CPU 아키텍쳐에 따라 다르지만 intel x86, x64, AMD 계열은 리틀엔디안, 모토로라 프로세서들은 빅엔디안을 사용한다.  
-현재 시스템의 엔디안방식을 확인하고 싶다면 echo -n I | od -to2 | head -n1 | awk'{print $2;}' | cut -c6  
-명령으로 나오는 값이 1이라면 리틀 엔디안, 0이라면 빅엔디안이다.  

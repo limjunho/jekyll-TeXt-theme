@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 ### 소스분석  
 1. argc가 2보다 작다면 "ergv error"을 출력하고 프로그램을 종료한다.  
 **argc란? - 파라미터의 개수를 의미한다. 즉 main에 최소 2개이상의 인자를 전달하여야 한다.**  
-main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하여 출력하는 소스  
+2. main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하여 출력하는 소스  
 **strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 256Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
 
 ### Solution  
@@ -55,10 +55,11 @@ main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하
 what is shellcode? - 주로 기계어 코드로 이루어진 소프트웨어 취약점을 공격하기 위한 코드.  
 
 #### level1에서 사용한 쉘코드  
-**\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31\xd2\xb0\x0b\xcd\x80"**  
-이 25Byte 쉘코드는 /bin/bash를 실행시키도록 하는 코드이다.  
+**\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31\xd2\xb0\x0b\xcd\x80**  
+이 41Byte 쉘코드는 /bin/bash를 실행시키도록 하는 코드이다.  
 
 **ShellCode를 이용하기 위해서는 프로그램 Stack의 구조를 알아야 한다.**  
+
 스택구조|
 ---|
 buffer(256Byte)|
@@ -67,7 +68,6 @@ ret(4Byte)|
 
 **SFP(Stack frame pointer) - 이전 함수의 EBP주소를 담고 있다.**  
 (EBP - 스택의 가장 바닥을 가리키는 포인터)  
-
 **RET(Return Address) - 함수가 종료시 return될 주소**  
 
 #### 쉘코드의 주소를 ret에 덮어씌우면 main함수가 종료되며 쉘코드를 실행시킬 것이다.  
@@ -106,6 +106,7 @@ ex) 0xbffffc11을 리틀 엔디안 방식으로 저장하면 11cfffbf가 된다.
 gdb를 이용하여 디버깅을 하게 되면 한번 복사되어 들어가기 때문에 실제 프로세스 주소와 차이가 있다.  
 
 {% highlight C linenos %}  
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {

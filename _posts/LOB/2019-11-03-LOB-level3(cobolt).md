@@ -121,5 +121,5 @@ ex) 0xbffffc11을 리틀 엔디안 방식으로 저장하면 11cfffbf가 된다.
 현재 시스템의 엔디안방식을 확인하고 싶다면 echo -n I | od -to2 | head -n1 | awk'{print $2;}' | cut -c6  
 명령으로 나오는 값이 1이라면 리틀 엔디안, 0이라면 빅엔디안이다.  
 
-![그림4](/assets/LOB/level2/4.PNG)  
+![그림4](/assets/LOB/level1/4.PNG)  
 공격 성공.   

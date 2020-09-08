@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 [LOB(level1)](https://limjunho.github.io/2019/09/29/LOB-level1(gate).html)**와 같이 쉘코드를 사용하기엔 buffer의 크기가 작다.**  
 2. argc가 2보다 작다면 "ergv error"을 출력하고 프로그램을 종료한다.  
 **argc란? - 파라미터의 개수를 의미한다. 즉 main에 최소 2개이상의 인자를 전달하여야 한다.**  
-3. main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하여 출력하는 소스  
+3. main에 전달받은 인자 argv[1]을 buffer에 복사하여 출력하는 소스(argv[0]은 파일명)  
 **strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 16Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
 
 ### Solution  
@@ -123,3 +123,8 @@ ex) 0xbffffc11을 리틀 엔디안 방식으로 저장하면 11cfffbf가 된다.
 
 ![그림4](/assets/LOB/level2/4.PNG)  
 공격 성공.   
+
+**페이로드**  
+```bash
+$ ./cobolt `python -c "print 'A' *20 + '\xbb\xfe\xff\xbf'"`
+```

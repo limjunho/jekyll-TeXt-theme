@@ -76,7 +76,7 @@ main(int argc, char *argv[])
 **환경변수를 이용한 공격 불가**  
 3. argv[1][47]의 값이 \xbf가 아닌경우 "stack is still your friend" 출력 후 프로그램 종료  
 **RTL기법 사용 불가 What is RTL? - [LOB(level13)](https://limjunho.github.io/2020/03/14/LOB-level13(darkknight).html)**  
-4. main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하여 출력
+4. main에 전달받은 인자 argv[1]을 buffer에 복사하여 출력(argv[0]은 파일명)  
 **strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 40Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
 5. buffer를 memset으로 모두 0으로 초기화  
 **4번의 취약점을 보완하였지만 argc가 2개 이상인 경우에 대한 보안은 없기 때문에 argv[2]를 이용할 수 있는 취약점이 있다.**  

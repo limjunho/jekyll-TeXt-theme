@@ -4,8 +4,8 @@ tags: LOB
 ---
 
 LOB란 The Lord of the BOF의 약자로 Buffer over-flow를 연습해 볼 수 있는 해킹문제이다.    
-총 20문제로 구성되어 있으며 각 문제를 격파하여 다음 레벨의 패스워드를 얻는 형식입니다.  
-문제를 격파하고 다음 레벨의 bash를 획득하였다면 my-pass로 패스워드를 확인할 수 있습니다.  
+총 20문제로 구성되어 있으며 각 문제를 격파하여 다음 레벨의 패스워드를 얻는 형식이다.  
+문제를 격파하고 다음 레벨의 bash를 획득하였다면 my-pass로 패스워드를 확인할 수 있다.  
 
  [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
@@ -169,7 +169,7 @@ argv[1]의 주소 -> 0xbffffc3d
 argv[1]의 주소와 스택의 구조를 파악하였으므로 공격을 시도할 수 있다.  
 **./orc [ShellCode] + [dummy] + [argv(1)주소]**의 형태로 공격.  
 **이 때 ShellCode + dummy값의 길이는 buffer의 길이 + sfp(4byte)만큼 즉 44Byte여야 한다.**
-**또한 RET에 덮을 NOP의 주소는 리틀 엔디안 방식으로 기입한다.**  
+**또한 RET에 덮을 argv[1]의 주소는 리틀 엔디안 방식으로 기입한다.**  
 
 **리틀 엔디안은 최 하위 바이트 부터 저장하는 방식이다.**  
 ex) 0xbffffc11을 리틀 엔디안 방식으로 저장하면 11cfffbf가 된다.  

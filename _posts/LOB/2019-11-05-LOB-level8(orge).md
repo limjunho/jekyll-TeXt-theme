@@ -179,7 +179,7 @@ main(int argc, char *argv[])
 
 ![그림2](/assets/LOB/level8/2.PNG)  
 위의 방법으로 argv[0]의 주소를 획득.  
-argv[0]의 주소 -> 0xbffffbb9  
+argv[0]의 주소 -> 0xbffffbcd  
 
 **파일명의 길이가 원본 실행파일(troll)의 심벌릭링크와 길이가 같아야 한다.**  
 argv[0]의 길이가 다르면 원본파일의 argv[0]의 주소와 다른 주소를 얻을 수 있기 때문.  

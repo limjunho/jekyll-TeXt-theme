@@ -45,6 +45,7 @@ Yarn npm의 개선 버전.
 ### VSCode install  
 
 [Visual Studio Code](https://code.visualstudio.com/)에서 설치.  
+<br />
 
 ### create-react-app install  
 
@@ -74,4 +75,4 @@ $ cd hello-react
 $ yarn start
 ```
 위의 명령 실행시 아래의 창이 뜬다.  
-![그림1](/assets/React/post2_start_react/2.PNG){: width="50% height="50%"}   
+![그림1](/assets/React/post2_start_react/2.PNG){: width="70% height="70%"}   

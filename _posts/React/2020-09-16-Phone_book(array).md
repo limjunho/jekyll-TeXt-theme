@@ -1,5 +1,5 @@
 ---
-title: Array Example(Hook)
+title: Array Rendering Example(Hook)
 tags: React
 ---
 
@@ -7,11 +7,7 @@ tags: React
 [JSX Example](https://limjunho.github.io/2020/09/15/JSX-Example.html) - 컴포넌트를 만드는 법과 JSX문법  
 [state and props](https://limjunho.github.io/2020/09/15/state_and_props.html) - State와 props  
 
-[Phone Book Example(Hook)](https://limjunho.github.io/2020/09/16/Phone_book.html)를 배열을 사용한 예제  
-**리엑트에서는 배열을 다룰 때 평상시에 하던것 처럼 값을 직접 수정해선 안된다.**  
--> 이를 불변성 유지라 한다.  
-
-**리엑트에서는 기존의 배열에 기반하여 새 배열을 만들어내는 함수인 concat, slice, map, filter 같은 함수를 사용한다.**  
+**리엑트에서 배열을 렌더링하는 예제**  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
@@ -19,7 +15,7 @@ tags: React
 
 ---
 
-### 배열 렌더링  
+### 배열 렌더링(index접근)  
 
 ```jsx
 import React from 'react';
@@ -65,6 +61,8 @@ export default UserList;
 **UserList.js**  
 배열의 인덱스를 조회하는 방식  
 <br />
+
+### 배열 렌더링(동적배열 접근)  
 
 ```jsx
 import React from 'react';

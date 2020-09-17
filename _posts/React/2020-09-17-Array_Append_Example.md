@@ -80,8 +80,8 @@ export default CreateUser;
 **CreateUser.js**  
 이름과 전화번호를 입력할 공간과 버튼을 구현  
 onChange와 OnCreate는 App.js에서 구현하여 props로 전달  
-<br />  
-<br />  
+<br />
+<br />
 
 ```jsx
 import React, { useRef, useState } from 'react';

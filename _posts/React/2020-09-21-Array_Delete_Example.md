@@ -1,5 +1,5 @@
 ---
-title: Array Append Example(Hook)
+title: Array Delete Example(Hook)
 tags: React
 ---
 

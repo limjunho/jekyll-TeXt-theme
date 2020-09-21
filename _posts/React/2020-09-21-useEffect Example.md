@@ -78,7 +78,7 @@ export default UserList;
 컴포넌트를 추가 및 삭제해보면 로그 확인 가능  
 <br />
 
-### deps관리  
+### deps 관리  
 
 deps 에 특정 값을 넣으면 지정한 값이 바뀔 때, 값이 바뀌기 직전에도 호출이 된다.  
 
@@ -120,6 +120,7 @@ export default UserList;
 ```
 **UserList.js**  
 실행결과.  
+**user배열의 원소가 추가되거나 제거되어 리렌더링 될 때마다 호출됨**  
 ![그림2](/assets/React/post12_useEffect_ex/2.PNG)  
 <br />
 
@@ -165,5 +166,11 @@ export default UserList;
 ```
 **UserList.js**  
 실행결과.  
-
+**input에 s를 입력하였을 때, 컴포넌트들이 리렌더링될 때 마다 호출**  
 ![그림3](/assets/React/post12_useEffect_ex/3.PNG)  
+
+### 추가내용  
+
+React 컴포넌트는 부모컴포넌트가 리렌더링되면 바뀐 내용이 없더라도 자식 컴포넌트도 리렌더링된다.  
+**실제 DOM 에 변화가 반영되는 것은 바뀐 내용이 있는 컴포넌트에만 해당 하지만, Virtual DOM 에는 모든걸 다 렌더링하고 있다.**  
+이 부하를 줄이기 위해 React에서 불변성을 지키는것.  

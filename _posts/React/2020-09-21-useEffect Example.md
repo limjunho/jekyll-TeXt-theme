@@ -3,143 +3,167 @@ title: useEffect Example(Hook)
 tags: React
 ---
 
-**useEffect로 특정 DOM을 선택하고 컴포넌트 내의 변수를 생성하는 예제**  
-1. 프로젝트를 하다보면 가끔 DOM을 직접 선택해야하는 경우가 발생한다.  
-**ex) 특정 엘리먼트의 크기를 가져오거나 스크롤바의 위치를 가져오는 경우, 포커스를 설정하는 경우**  
-이 때, React에서는 ref를 사용한다. **함수형 컴포넌트(Hook)에서는 useRef라는 Hook함수를 사용**  
-이 포스팅에서는 포커스를 설정하는데 ref를 사용한다.
+**useEffect 예제**  
+useEffect 라는 Hook 을 사용하여 컴포넌트가 마운트 됐을 때 (처음 나타났을 때), 언마운트 됐을 때 (사라질 때), 그리고 업데이트 될 때 (특정 props가 바뀔 때) 특정 작업을 처리 
 <br />
 
-2. useRef로 관리하는 변수는 값이 바뀌더라도 컴포넌트가 리랜더링되지 않는다.  
-**리액트 컴포넌트에서의 상태는 상태를 바꾸는 함수를 호출하고 나서 렌더링 이후로 업데이트 된 상태를 조회**  
-**useRef 로 관리하고 있는 변수는 설정 후 바로 조회**  
+[React Array Example코드](https://github.com/limjunho/React/tree/master/array_ex)  
+예제 소스코드(github)  
 
-[send me email](mailto:jewel7492@gmail.com) if you have any questions.
+[send me email](mailto:jewel7492@gmail.com) if you have any questions.  
 
 <!--more-->
 
 ---
 
-### 예제만들기(포커스 설정예제)   
+### 마운트, 언마운트 관리  
+
+**마운트 시에 하는 작업들은 주로**  
+
+1. props 로 받은 값을 컴포넌트의 로컬 상태로 설정  
+2. 외부 API 요청  
+3. 라이브러리 사용  
+4. setInterval 을 통한 반복작업 혹은 setTimeout 을 통한 작업 예약  
+
+**언마운트 시에 하는 작업들은 주로**  
+
+1. setInterval, setTimeout 을 사용하여 등록한 작업들 clear 하기 (clearInterval, clearTimeout)  
+2. 라이브러리 인스턴스 제거  
 
 ```jsx
-import React, { useState, useRef } from 'react';
+import React, {useEffect} from 'react';
 
-function InputSample() {
-  const [inputs, setInputs] = useState({
-    username: '',
-    phonenumber: ''
-  });
-
-  const { username, phonenumber } = inputs;
-
-  const onChange = e => {
-    const { value, name } = e.target; 
-    setInputs({
-      ...inputs, 
-      [name]: value 
-    });
-  };
-
-  return (
-    <div>
-      <input
-        name="username"
-        placeholder="input name..."
-        onChange={onChange}
-        value={username}
-      />
-      <br />
-      <input
-        name="phonenumber"
-        placeholder="input phonenumber..."
-        onChange={onChange}
-        value={phonenumber}
-      />
-      <br />
-      <button>초기화</button>
-      <div>
-        {username} ({phonenumber})
-      </div>
-    </div>
-  );
+function User({ user, onRemove, onUpdate }) {
+    useEffect(() => {
+        console.log("컴포넌트 등장!");
+        return () =>{
+            console.log("컴포넌트 퇴장..");
+        }
+    }, []);
+    return (
+        <div>
+            <b>{user.username}</b> <span>({user.phonenumber})</span>
+            <button onClick={() => onRemove(user.id)}>삭제</button>
+            <button onClick={() => onUpdate(user.id)}>수정</button>
+        </div>
+    )
 }
 
-export default InputSample;
+function UserList({ users, onRemove, onUpdate }) {
+    return (
+        <div>
+            {users.map(user => (
+                <User user={user} 
+                key={user.id} 
+                onRemove={onRemove} 
+                onUpdate={onUpdate} />
+            ))}
+        </div>
+    );
+}
+
+export default UserList;
 ```
-**App.js**  
-특정 값을 입력하면 초기화 버튼 아래에 입력값이 랜더링되는 예제  
+**UserList.js**  
+1. useEffect 를 사용 할 때에는 첫번째 파라미터에는 함수, 두번째 파라미터에는 의존값이 들어있는 배열 (deps)을 넣는다.  
+**deps 배열을 비우면 컴포넌트가 처음 나타날때에만 useEffect 에 등록한 함수가 호출된다.**  
+
+2. useEffect 에서는 함수를 반환 할 수 있는데 이를 cleanup 함수라한다.  
+**cleanup 함수는 useEffect 에 대한 뒷정리 역할이며, deps 가 비어있는 경우에는 컴포넌트가 사라질 때 cleanup 함수가 호출됩니다.**  
 <br />
 <br />
 
-![그림1](/assets/React/post11_useRef_ex/1.PNG)  
+![그림1](/assets/React/post12_useEffect_ex/1.PNG)  
 **예제 실행결과**  
+컴포넌트를 추가 및 삭제해보면 로그 확인 가능  
 <br />
 
-### useRef적용  
+### deps관리  
+
+deps 에 특정 값을 넣으면 지정한 값이 바뀔 때, 값이 바뀌기 직전에도 호출이 된다.  
+
 ```jsx
-import React, { useState, useRef } from 'react';
+import React, {useEffect} from 'react';
 
-function InputSample() {
-  const [inputs, setInputs] = useState({
-    username: '',
-    phonenumber: ''
-  });
-  const nameInput = useRef();
-
-  const { username, phonenumber } = inputs; 
-
-  const onChange = e => {
-    const { value, name } = e.target; 
-    setInputs({
-      ...inputs, 
-      [name]: value 
-    });
-  };
-
-  const onReset = () => {
-    setInputs({
-      username: '',
-      phonenumber: ''
-    });
-    nameInput.current.focus();
-  };
-
-  return (
-    <div>
-      <input
-        name="username"
-        placeholder="input name..."
-        onChange={onChange}
-        value={username}
-        ref={nameInput}
-      />
-      <br />
-      <input
-        name="phonenumber"
-        placeholder="input phonenumber..."
-        onChange={onChange}
-        value={phonenumber}
-      />
-      <br />
-      <button onClick={onReset}>초기화</button>
-      <div>
-        {username} ({phonenumber})
-      </div>
-    </div>
-  );
+function User({ user, onRemove, onUpdate }) {
+    useEffect(() => {
+        console.log("컴포넌트 등장!");
+        console.log(user);
+        return () =>{
+            console.log("컴포넌트 퇴장..");
+            console.log(user);
+        }
+    }, [user]);
+    return (
+        <div>
+            <b>{user.username}</b> <span>({user.phonenumber})</span>
+            <button onClick={() => onRemove(user.id)}>삭제</button>
+            <button onClick={() => onUpdate(user.id)}>수정</button>
+        </div>
+    )
 }
 
-export default InputSample;
+function UserList({ users, onRemove, onUpdate }) {
+    return (
+        <div>
+            {users.map(user => (
+                <User user={user} 
+                key={user.id} 
+                onRemove={onRemove} 
+                onUpdate={onUpdate} />
+            ))}
+        </div>
+    );
+}
+
+export default UserList;
 ```
-**App.js**  
-**초기화 버튼을 클릭했을 때, username input에 포커스가 잡히도록 기능 구현**  
-useRef()로 ref객체를 생성한 뒤, 이 객체를 선택하고 싶은 DOM에 ref값으로 설정  
-**onReset함수에서 input에 포커스를 잡는 focus()라는 DOM API를 사용**  
-<br />
+**UserList.js**  
+실행결과.  
+![그림2](/assets/React/post12_useEffect_ex/2.PNG)  
 <br />
 
-**값을 입력하고 초기화 버튼을 누르면 값들이 초기화되며 username input에 포커스가 잡힌다.**  
+### deps 생략   
 
-### 컴포넌트 내의 변수  
-[Array Append Example](https://limjunho.github.io/2020/09/17/Array_Append_Example.html)에서 배열에 사용하는 고유 id값을 관리하는데 ref를 사용한다.  
+deps파라미터를 생략해버리면 컴포넌트가 리렌더링 될 때마다 호출된다.  
+
+```jsx
+import React, {useEffect} from 'react';
+
+function User({ user, onRemove, onUpdate }) {
+    useEffect(() => {
+        console.log("컴포넌트 등장!");
+        console.log(user);
+        return () =>{
+            console.log("컴포넌트 퇴장..");
+            console.log(user);
+        }
+    });
+    return (
+        <div>
+            <b>{user.username}</b> <span>({user.phonenumber})</span>
+            <button onClick={() => onRemove(user.id)}>삭제</button>
+            <button onClick={() => onUpdate(user.id)}>수정</button>
+        </div>
+    )
+}
+
+function UserList({ users, onRemove, onUpdate }) {
+    return (
+        <div>
+            {users.map(user => (
+                <User user={user} 
+                key={user.id} 
+                onRemove={onRemove} 
+                onUpdate={onUpdate} />
+            ))}
+        </div>
+    );
+}
+
+export default UserList;
+```
+**UserList.js**  
+실행결과.  
+
+![그림3](/assets/React/post12_useEffect_ex/3.PNG)  

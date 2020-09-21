@@ -130,6 +130,9 @@ export default App;
 **App.js**  
 onRemove를 구현  
 -> user.id가 일치하지 않는 원소들로 새로운 배열을 만든다.  
+
+[useRef Example](https://limjunho.github.io/2020/09/21/useRef-Example.html)  
+useRef는 위의 정리글 참고  
 <br />
 <br />
 

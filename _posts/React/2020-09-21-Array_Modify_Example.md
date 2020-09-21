@@ -154,6 +154,9 @@ export default App;
 onUpdate를 구현  
 -> user.id가 일치하는 원소의 값을 수정하여 새로운 배열을 만든다.  
 
+[useRef Example](https://limjunho.github.io/2020/09/21/useRef-Example.html)  
+useRef는 위의 정리글 참고  
+
 **값을 입력하고 submit!!대신에 수정을 입력하면 값이 수정된다.**  
 <br />
 <br />

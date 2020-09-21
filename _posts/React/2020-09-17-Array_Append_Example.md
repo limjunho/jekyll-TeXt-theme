@@ -145,6 +145,8 @@ export default App;
 ```
 **App.js**  
 onCreate는 버튼을 눌렀을 때 호출됨 -> 배열에 값을 추가하는 코드를 작성해야한다.  
+[useRef Example](https://limjunho.github.io/2020/09/21/useRef-Example.html)  
+useRef는 위의 정리글 참고  
 <br />
 
 ![그림1](/assets/React/post8_array_append_ex/1.PNG)  

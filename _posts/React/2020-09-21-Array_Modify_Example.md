@@ -157,5 +157,5 @@ onUpdate를 구현
 <br />
 
 ![그림1](/assets/React/post10_array_modify_ex/1.PNG)  
-![그림2](/assets/React/post9_array_modify_ex/2.PNG)  
+![그림2](/assets/React/post10_array_modify_ex/2.PNG)  
 **예제 실행결과**  

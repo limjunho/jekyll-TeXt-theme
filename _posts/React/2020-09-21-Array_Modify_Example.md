@@ -124,7 +124,7 @@ function App() {
     setUsers(
       users.map(user =>
         user.id === id ?
-          { username: username, phonenumber: phonenumber }
+          { id: nextId.current, username: username, phonenumber: phonenumber }
           : user
       )
     )
@@ -133,6 +133,8 @@ function App() {
       username: '',
       phonenumber: ''
     });
+
+    nextId.current += 1;
   }
 
   return (

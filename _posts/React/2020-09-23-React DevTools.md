@@ -20,8 +20,7 @@ tags: React
 
 **chrome://extensions/ -> React Developer Tools 세부정보-> 파일 URL에 대한 엑세스 허용**  
 ![그림1](/assets/React/React_DevTools/1.PNG)
-
-### 사용
+<br />
 
 ![그림2](/assets/React/React_DevTools/2.PNG)  
 F12를 눌러 개발자 도구를 키면 React탭이 새로 생긴것을 확인.  

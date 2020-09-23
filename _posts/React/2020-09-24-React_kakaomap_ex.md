@@ -73,7 +73,6 @@ export default CreateMap;
 useEffect를 이용하여 마운트 시 지도 출력
 
 **what is [useEffect](https://limjunho.github.io/2020/09/21/useEffect-Example.html)?**
-
 <br />
 
 ```jsx
@@ -84,7 +83,25 @@ useEffect를 이용하여 마운트 시 지도 출력
 ```
 
 **index.html에 추가**  
-API를 불러오는 코드
+API를 불러오는 코드  
+<br />
+
+```jsx
+import React from "react";
+import CreateMap from "./components/CreateMap";
+
+function App() {
+  return (
+    <div>
+      <CreateMap />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**App.js**
 
 ### 실행결과
 

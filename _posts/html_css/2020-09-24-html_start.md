@@ -48,7 +48,8 @@ html을 기본적으로 hede와 body로 나뉜다.
 **<body> : 웹 브라우저를 통해 보이는 부분**  
 실제로 웹 브라우저에 보이는 부분은 <body>여기에 코딩한다.</body>
 
-**html에서는 대소문자를 구분하지 않으며 종료태그엔 /를 붙인다.**
+**html에서는 대소문자를 구분하지 않으며 종료태그엔 /를 붙인다.**  
+**주석은 <!-- 주석 내용 -->으로 표기한다.**
 
 ### 매우 기본적인 태그(tags)
 
@@ -62,7 +63,7 @@ html을 기본적으로 hede와 body로 나뉜다.
    **<h1> ~ <h6> : 제목(heading)을 나타낸다.**  
    **<p> : 단락(paragraph)을 나타낸다.** `
 
-[MDN web docs](https://developer.mozilla.org/ko/docs/Web/HTML)**html에 대한 자료는 여기서 참고**  
+[MDN web docs](https://developer.mozilla.org/ko/docs/Web/HTML) **html에 대한 자료는 여기서 참고**  
 요소들의 대한 정보를 모두 여기에서 볼 수 있음.
 
 ### 사용자의 정보를 입력받는 예제
@@ -151,7 +152,7 @@ html을 기본적으로 hede와 body로 나뉜다.
 ![그림2](/assets/html_css/start_html/2.PNG)  
 간단히 유저의 정보를 받는 예제
 
-![그림3](/assets/html_css/start_html/2.PNG)  
-![그림4](/assets/html_css/start_html/2.PNG)  
-![그림5](/assets/html_css/start_html/2.PNG)  
+![그림3](/assets/html_css/start_html/3.PNG)  
+![그림4](/assets/html_css/start_html/4.PNG)  
+![그림5](/assets/html_css/start_html/5.PNG)  
 **위와같이 입력을 검사**

@@ -93,25 +93,22 @@ function App() {
     [users]
   );
 
-  const onUpdate = useCallback(
-    id => {
-      setUsers(
-        users.map(user =>
-          user.id === id ?
-            { id: nextId.current, username: username, phonenumber: phonenumber }
-            : user
-        )
-      );
+  const onUpdate = id => {
+    setUsers(
+      users.map(user =>
+        user.id === id ?
+          { id: nextId.current, username: username, phonenumber: phonenumber }
+          : user
+      )
+    );
 
-      setInputs({
-        username: '',
-        phonenumber: ''
-      });
+    setInputs({
+      username: '',
+      phonenumber: ''
+    });
 
-      nextId.current += 1;
-    },
-    [users]
-  );
+    nextId.current += 1;
+  };
 
   const count = useMemo(() => countUsers(users), [users]);
 
@@ -135,6 +132,8 @@ export default App;
 **함수 안에서 사용하는 상태 혹은 props 가 있다면 반드시 deps 배열안에 포함시켜야 한다.**  
 위의 조건을 지키지 않는 경우 함수 내에서 해당 값들을 참조할 때 가장 최신 값을 참조할 것이라 보장할 수 없다.  
 props로 받아온 함수도 deps에 포함!  
+
+onUpdate는 useCallback사용 시 input값을 가져오지 못하기 때문에 사용 X  
 <br />
 
 ### 추가사항  

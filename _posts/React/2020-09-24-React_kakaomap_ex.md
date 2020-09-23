@@ -28,7 +28,7 @@ tags: React
 
 **3. 발급받은 키 확인**
 
-![그림3](/assets/React/kakaomap/3.png)
+![그림3](/assets/React/kakaomap/3.PNG)
 
 ### kakaomap 사용
 

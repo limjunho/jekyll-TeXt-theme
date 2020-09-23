@@ -156,3 +156,5 @@ html을 기본적으로 hede와 body로 나뉜다.
 ![그림4](/assets/html_css/start_html/4.PNG)  
 ![그림5](/assets/html_css/start_html/5.PNG)  
 **위와같이 입력을 검사**
+
+[예제github](https://github.com/limjunho/html_css/tree/master/user_infomation)

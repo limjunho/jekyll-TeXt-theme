@@ -28,22 +28,22 @@ mysql> insert ignore into tablename values(데이터타입 값, );
 ```bash
 mysql> delete from tablename where number <=2;
 ```
-**number가 2 이하인 레코드 삭제**   
+**number가 2 이하인 ROW 삭제**   
 
 ```bash
 mysql> delete from tablename where data = "test";
 ```
-**data 칼럼의 값이 "test"인 레코드를 삭제**  
+**data 칼럼의 값이 "test"인 ROW를 삭제**  
 
 ```bash
 mysql> delete from tablename where number <=2 and data = "test";
 ```
-**number가 2 이하이면서 data가 "test"인 레코드를 삭제**  
+**number가 2 이하이면서 data가 "test"인 ROW를 삭제**  
 
 ```bash
 mysql> delete from tablename where number <=2 or data = "test";
 ```
-**number가 2 이하이거나 data가 "test"인 레코드를 삭제**  
+**number가 2 이하이거나 data가 "test"인 ROW를 삭제**  
 
 ```bash
 mysql> delete from tablename;

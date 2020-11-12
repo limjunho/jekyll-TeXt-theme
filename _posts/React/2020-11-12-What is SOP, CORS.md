@@ -3,7 +3,7 @@ title: What is SOP, CORS??
 tags: React
 ---
 
-![그림1](/assets/React/What_is_SOP,_CORS/1.PNG) 
+![그림1](/assets/React/What_is_SOP,_CORS/1.png) 
 **웹을 개발하다보면 한번쯤 겪게되는 에러라고 한다. 이 에러에 대해 알아보자.**  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
@@ -14,7 +14,7 @@ tags: React
 
 ### 출처(Origin)란?  
 
-![그림2](/assets/React/What_is_SOP,_CORS/2.PNG)  
+![그림2](/assets/React/What_is_SOP,_CORS/2.jpg)  
 위와 같은 Url에서 Protocol과 Host, Port가 같다면 같은 출처라고 본다.  
 
 **기준 출처**  

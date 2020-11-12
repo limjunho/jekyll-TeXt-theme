@@ -3,7 +3,7 @@ title: What is SOP, CORS??
 tags: React
 ---
 
-![그림1](/assets/React/What_is_SOP,_CORS/1.png) 
+![그림1](/assets/React/What_is_SOP,_CORS/1.png)  
 **웹을 개발하다보면 한번쯤 겪게되는 에러라고 한다. 이 에러에 대해 알아보자.**  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.

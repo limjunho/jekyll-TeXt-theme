@@ -1,5 +1,5 @@
 ---
-title: Github 저장소에서 특정 branch만 clone하기
+title: VSC에서 git conflict해결
 tags: Git
 ---
 

@@ -1,23 +1,9 @@
 ---
-title: Fork저장소 최신 원본으로 동기화
+title: Github 저장소에서 특정 branch만 clone하기
 tags: Git
 ---
 
-3자 개발자의 공헌을 받는 방법으로, Github에서 주로 사용하는 방식이 fork와 pull request이다.  
-**fork는 원본 저장소를 내 github 저장소로 복사하는 것.** fork는 내가 마음대로 수정해서 업데이트 할 수 있다.  
-그 다음에 **Pull request(PR)를 통해 나의 업데이트를 원본 저장소에서 작업하는 개발자들에게 나의 업데이트를 적용하도록 요청할 수 있다.**  
-
-
-**원본저장소가 계속 업데이트 됐으면 어떻게 fork를 최신 원본과 동기화 하는가**  
-
-**1. 기존의 fork를 삭제한 후 다시 fork하는 방법**  
-이는 새로 fork한 곳에 자신이 업데이트한 코드를 다시 적용해야하는 번거로움이 있다.  
-
-**2. 기존의 fork와 원본 저장소를 동기화하는 방법**  
-1) 로컬에 clone한 fork 저장소에 원본(upstream) 저장소의 github주소를 추가.
-2) 로컬에 clone한 fork 저장소에서 원본 저장소를 fetch  
-3) 나의 저장소에서 master branch를 checkout한 다음 원본 저장소의 master (upstream/master)를 merge.  
-**해당 원본 저장소에 다른 branch가 있다면 branch명만 바꾸어 반복해 주면 된다.**  
+원본 저장소나 fork저장소에서 특정 브랜치만을 클론받고 싶을때의 방법.  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
@@ -25,47 +11,9 @@ tags: Git
 
 ---
 
-### fork와 원본 저장소를 동기화  
+### 특정 branch만 clone하기   
 
 ```bash
-$ git remote -v
+$ git clone -b '브랜치이름' --single-branch '원본orFork 저장소 주소'
 ```
-**현재 자신의 github 저장소 주소 확인**  
 
-#### 1. 원본 (upstream) 저장소의 원격 주소를 추가  
-```bash
-$ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
-```
-upstream대신 다른 이름을 써도 상관없다만 보통 upstream사용.
-
-다시 git remote -v로 원격 주소가 잘 추가되었는지 확인하고 다음으로 넘어간다.  
-
-#### 2. 로컬의 fork에 원본 저장소를 fetch  
-```bash
-$ git fetch upstream
-```
-이 과정을 통해 원본 저장소 branch들에 있는 업데이트들이 로컬의 upstream/branch들로 복사가 된다.  
-
-#### 3. fetch된 코드들을 merge.  
-```bash
-$ git checkout master
-```
-**master로 checkout**  
-<br />
-
-```
-error: pathspec 'master' did not match any file(s) known to git. 
-```
-만약 위와같은 에러가 발생한다면 아래의 방법으로 해결  
-```bash
-$ git checkout -b master --track origin/master
-```
-<br />
-
-```bash
-$ git merge upstream/master
-```
-**upstream/master 업데이트와 나의 master를 합치기 (merge)**  
-
-**master가 아닌 다른 브랜치가 있다면 3번의 과정을 그 브랜치 이름으로 수행하여준다.**  
-위의 과정을 모두 거쳤다면 fork저장소가 원본 저장소와 동기화 된다.  

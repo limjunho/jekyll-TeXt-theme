@@ -17,7 +17,7 @@ tags: React
 $ npm install --save react-router
 ```
 
-```es6
+```javascript
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 ```
 위의 코드를 Router.js 상단에 삽입.  

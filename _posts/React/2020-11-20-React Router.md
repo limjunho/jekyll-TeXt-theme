@@ -26,7 +26,7 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 각자에게 필요한 코드를 구현할 것.  
 
 ### Link걸기  
-```es6
+```javascript
 function NoticePage() {
   return (
     <Container>
@@ -52,7 +52,7 @@ function NoticePage() {
 html의 a태그와 비슷한 방법으로 사용된다.  
 
 ### Router 설정하기  
-```es6
+```javascript
 import React from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 

@@ -24,7 +24,7 @@ $ npm start
 
 ```bash
 $ yarn add react-scripts
-$ npm install -save react-scripts
+$ npm install --save react-scripts
 ```
 
 **위의 둘 중 하나 실행**

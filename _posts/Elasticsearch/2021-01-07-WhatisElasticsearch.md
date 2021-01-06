@@ -80,12 +80,12 @@ RDB의 요소들과 Elasticsearch의 요소는 아래의 표와 같이 대응된
 * Restful  
   * 데이터 CURD 작업은 HTTP Restful API를 통해 수행한다.  
 
-  |Data CURD|Elasticsearch Restful|
-  |:---:|:---:|
-  |SELECT|GET|
-  |INSERT|PUT|
-  |UPDATE|POST|
-  |DELETE|DELETE|
+  |Data CURD|Elasticsearch Restful|  
+  |:---:|:---:|  
+  |SELECT|GET|  
+  |INSERT|PUT|  
+  |UPDATE|POST|  
+  |DELETE|DELETE|  
 <br />
 
 ### inverted index(역색인)  

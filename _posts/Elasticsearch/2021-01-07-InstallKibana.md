@@ -21,6 +21,8 @@ Kibana는 Elasticsearch와 함께 사용하도록 설계된 오픈소스 분석 
 
 ![그림1](/assets/Elasticsearch/InstallKibana/1.png)  
 
+### Start
+
 Kibana의 실행은 윈도우버전이므로 bin/kibana.bat을 더블클릭해서 실행한다. **(elasticsearch.bat을 먼저 실행하고 실행)**   
 Kibana의 설정파일은 config/kibana.yml인데 여기서 변경을 하지 않는다면 **5601포트에서 서비스된다.**  
 

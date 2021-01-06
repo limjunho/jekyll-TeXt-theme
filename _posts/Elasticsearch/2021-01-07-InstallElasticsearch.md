@@ -15,6 +15,6 @@ window환경에서 Elasticsearch 설치하는 방법.
 
 [install](https://www.elastic.co/kr/downloads/elasticsearch)에서 윈도우 버전을 다운로드.  
 
-![그림1](/assets/Elasticsearch/InstallElasticserach/1.png)  
+![그림1](/assets/Elasticsearch/InstallElasticsearch/1.png)  
 
 Elasticsearch의 실행은 윈도우버전이므로 bin/elasticsearch.bat를 더블클릭해서 실행한다. 

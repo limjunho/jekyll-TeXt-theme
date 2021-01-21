@@ -21,7 +21,6 @@ MySql DataType 정리글
 |time|3byte 이며 시, 분, 초 자료형이다.|
 |datetime|8byte 이며 날짜와 시간(기간) 자료형이다. now() 함수를 써주면 현재시간으로 데이터가 입력된다.|
 
-</br>
 
 ### 정수, 실수형 자료형
 
@@ -35,7 +34,6 @@ MySql DataType 정리글
 |decimal|길이 + 1byte 이며 소수점 사용 형태이다.|
 |double|8byte 이며 double을 문자열로 저장한다.|
 
-</br>
 
 ### 문자열 자료형
 
@@ -47,7 +45,6 @@ MySql DataType 정리글
 |mediumtext|최대 16777215byte 이다.|
 |longtext|최대 4294967295byte 이다.|
 
-</br>
 
 ### 날짜 자료형
 

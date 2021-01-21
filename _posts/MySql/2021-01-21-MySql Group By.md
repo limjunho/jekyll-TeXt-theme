@@ -6,7 +6,8 @@ tags: MySql
 [함수 (Functions) 글](https://limjunho.github.io/2021/01/21/MySql-%ED%95%A8%EC%88%98.html) SQL 에서 제공하는 함수를 이용해서 통계값을 구하는 방법  
 함수를 통해 통계값은 구할 수 있었지만, 한번 SQL 요청을 통해 오직 하나의 결과값만을 얻을 수 있었다. 
 COUNT 를 이용해 개수를 세든, AVG 를 통해 평균값을 구하든 결과는 언제나 하나의 값이였다.  
-</br>
+
+<br/>
 사용자 테이블에서 남자가 몇명이고 여자는 몇명인지 구하고 싶다면 WHERE 에 성별 조건을 바꿔가면서 2번 SQL 문을 실행하는 방법도 있겠지만 **SQL에서 제공하는 데이터베이스에서 선택된 데이터를 그룹지어 통계값을 구할 수 있는 기능인 GROUP BY 를 활용하면 문제를 해결할 수 있다.**  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.

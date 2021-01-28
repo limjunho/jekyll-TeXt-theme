@@ -90,9 +90,6 @@ WANET 또는 MANET의 라우팅은 일반적으로 사전 예방 적 라우팅, 
 
 대부분의 무선 애드혹 네트워크는 네트워크 액세스 제어를 구현하지 않는데 이러한 네트워크는 악의적인 노드가 패킷을 중계하는 노드를 타겟으로하여 리소스를 고갈시키는 것을 목표로 네트워크에 패킷을 주입하는 **리소스 소비 공격에 취약**하다.
 
-> https://en.wikipedia.org/wiki/Wireless_ad_hoc_network  
-> https://blog.acronym.co.kr/128  
-
 ### 각주
 
 1. 포워딩(Forwarding)  
@@ -101,3 +98,9 @@ WANET 또는 MANET의 라우팅은 일반적으로 사전 예방 적 라우팅, 
 2. 플러딩(Flooding)  
     수신되는 링크를 제외한 나머지 모든 링크로 패킷을 단순하게 복사 전송하는
     일종의 무제어 포트 배정  
+
+### 참고문헌  
+
+> [Wireless ad hoc network - Wikipedia](https://en.wikipedia.org/wiki/Wireless_ad_hoc_network)  
+> [Ad hoc 네트워크에 대하여 - 미니~](https://blog.acronym.co.kr/128)  
+> [이동 Ad Hoc 네트워크 기술 동향 - 정보통신기술용어 해설](https://ettrends.etri.re.kr/ettrends/80/0905000407/18-2_011_024.pdf)  

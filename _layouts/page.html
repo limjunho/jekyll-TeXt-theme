@@ -74,6 +74,14 @@ layout: base
       {%- assign _page_main_class = _page_main_class | append: ' full-width' -%}
     {%- endif -%}
     <div class="{{ _page_main_class }} cell cell--auto">
+      
+    <div style="text-align: center;">
+      <a href="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"
+        target="_blank">
+        <img
+          src="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}.svg" />
+      </a>
+    </div>
 
       <div class="page__main-inner">
       {%- if _header != false -%}

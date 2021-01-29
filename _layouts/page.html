@@ -176,13 +176,7 @@ layout: base
 
         {%- endif -%}
 
-        <div style="text-align: center;">
-          <a href="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"
-            target="_blank">
-            <img
-            src="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}.svg" />
-        </a>
-      </div>
+        
                   
         {%- if _full_width == false -%}
           <div class ="main">
@@ -238,6 +232,14 @@ layout: base
     </div> {%- comment -%} end grid {%- endcomment -%}
   </div> {%- comment -%} end page__viewport {%- endcomment -%}
 {%- endif -%}
+                  
+<div style="text-align: center;">
+  <a href="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"
+    target="_blank">
+    <img
+    src="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}.svg" />
+  </a>
+</div>
 
 <script>{%- include scripts/lib/modal.js -%}</script>
 {%- if _lightbox == true -%}

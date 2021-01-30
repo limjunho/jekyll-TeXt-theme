@@ -172,3 +172,19 @@ input {
 .mermaidTooltip {
   display: none;
 }
+
+// 스크롤 테마 변경
+::-webkit-scrollbar{
+  width: 0.4rem;
+  height: 0.2rem;
+  background-color: #121212;
+  
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 0.4rem;
+  background-color: #ff006a;
+}
+
+::-webkit-scrollbar-track:horizontal{
+  background-color: #000000;
+}

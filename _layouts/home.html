@@ -35,6 +35,16 @@ articles:
 <div class="layout--home">
   {%- include paginator.html -%}
 </div>
+<div style="text-align: left;">
+  <a
+    href="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"
+    target="_blank"
+  >
+    <img
+      src="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}.svg"
+    />
+  </a>
+</div>
 <script>
   {%- include scripts/home.js -%}
 </script>

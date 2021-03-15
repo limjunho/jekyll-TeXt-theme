@@ -92,7 +92,7 @@ sqlmap은 DB 구조파악, 테이블 내용 유출 등을 자동화해주기 때
 
 * users 테이블의 password 칼럼을 모두 추출하도록 하여 user의 ID와 PASSWORD를 탈취한다.
 
-![그림9](/assets/Linux/session_hijacking/8.png)  
+![그림9](/assets/Linux/session_hijacking/9.png)  
 
 **위에서 탈취한 ID와 PASSWORD를 사용해 dvwa로그인이 가능하다.**
 

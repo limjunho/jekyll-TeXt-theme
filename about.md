@@ -26,20 +26,20 @@ titles:
 key: page-about
 ---
 
-## 인적사항  
+## Personal Information  
 
 ![image](/favicon.ico)  
-* 이름 : 임준호
-* 이름(영문) : Limjunho  
-* 전공 : 사이버보안전공
-* Email : jewel7492@gmail.com
-* Github : https://github.com/Limjunho
+* **이름 : 임준호**
+* **이름(영문) : Limjunho**  
+* **전공 : 사이버보안전공**
+* **Email : jewel7492@gmail.com**
+* **Github : https://github.com/Limjunho**
 
 ## Paper  
 
 ## Career  
 <details>
-<summary>여기를 눌러주세요</summary>
+<summary>대구·경북 아이디어톤(2020) - SW 설계 부문 최우수상</summary>
 <div markdown="1">       
 
 ![test](/assets/about/상장.png)  
@@ -50,4 +50,19 @@ key: page-about
 ## Project  
 
 ## Certificate
+<details>
+<summary>리눅스마스터 2급</summary>
+<div markdown="1">       
 
+![test](/assets/about/리눅스마스터2급.png)  
+
+</div>
+</details>
+<details>
+<summary>네트워크 관리사 2급</summary>
+<div markdown="1">       
+
+![test](/assets/about/네트워크관리사2급.png)  
+
+</div>
+</details>

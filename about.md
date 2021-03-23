@@ -38,7 +38,14 @@ key: page-about
 ## Paper  
 
 ## Career  
-[test](/assests/about/상장.png)  
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
+
+![test](/assets/about/상장.png)  
+
+</div>
+</details>
 
 ## Project  
 

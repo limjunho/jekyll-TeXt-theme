@@ -33,7 +33,7 @@ key: page-about
 * **이름(영문) : Limjunho**  
 * **전공 : 사이버보안전공**
 * **Email : jewel7492@gmail.com**
-* **Github : https://github.com/Limjunho**
+* **Github : [https://github.com/Limjunho]([https://github.com/Limjunho])**
 
 ## Paper  
 [`[임준호], 이영찬, 박지훈, 김대영. (2020). 신속한 대피를 위한 GPS, RSSI기반 지진 비상대피 안내 시스템. 한국정보과학회 학술발표논문집, (), 1342-1344.`](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09874770)

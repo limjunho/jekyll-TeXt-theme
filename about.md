@@ -58,7 +58,7 @@ key: page-about
 <summary>리눅스마스터 2급</summary>
 <div markdown="1">       
 
-![test](/assets/about/리눅스마스터2급.png)  
+![test](/assets/about/리눅스마스터2급.jpg)  
 
 </div>
 </details>
@@ -66,7 +66,7 @@ key: page-about
 <summary>네트워크 관리사 2급</summary>
 <div markdown="1">       
 
-![test](/assets/about/네트워크관리사2급.png)  
+![test](/assets/about/네트워크관리사2급.jpg)  
 
 </div>
 </details>

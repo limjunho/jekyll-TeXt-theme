@@ -1,6 +1,6 @@
 ---
 title: C Thread example
-tags: C
+tags: Python
 ---
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.

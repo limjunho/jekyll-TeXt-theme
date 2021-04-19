@@ -52,5 +52,5 @@ MTU는 최대 전송 단위로서 TCP/IP Network 등과 같이 패킷 또는 프
 ## 참고
 
 > [IP 단편화 - IT위키](https://itwiki.kr/w/IP_%EB%8B%A8%ED%8E%B8%ED%99%94)  
-> [IP Fragmentation, IP Segmentation, IP 단편화, IP 조각화, IPv4 단편화, IPv6 단편화 - 정보통신기술용어해설](http://www.ktword.co.kr/abbr_view.php?nav=&m_temp1=5236&id=1003)
+> [IP Fragmentation, IP Segmentation, IP 단편화, IP 조각화, IPv4 단편화, IPv6 단편화 - 정보통신기술용어해설](http://www.ktword.co.kr/abbr_view.php?nav=&m_temp1=5236&id=1003)  
 >[MTU란 - 고민하자](https://gominhaja.tistory.com/9)

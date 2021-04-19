@@ -1,6 +1,6 @@
 ---
 title: Uni, Broad, Multi, Anycast
-tags: Network Python 
+tags: Network
 ---
 
 ## 개요  

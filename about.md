@@ -53,6 +53,9 @@ key: page-about
 <details>
 <summary>React를 활용한 Web Page 개발</summary>
 <div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
 
 업데이트예정
 
@@ -62,6 +65,9 @@ key: page-about
 <details>
 <summary>Node.js + Express Example Server</summary>
 <div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
 
 업데이트예정
 
@@ -71,6 +77,9 @@ key: page-about
 <details>
 <summary>read and write time check</summary>
 <div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
 
 업데이트예정
 
@@ -81,16 +90,22 @@ key: page-about
 <details>
 <summary>리눅스마스터 2급</summary>
 <div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
 
-![test](/assets/about/리눅스마스터2급.jpg)  
+![리눅스마스터](/assets/about/리눅스마스터2급.jpg)  
 
 </div>
 </details>
 <details>
 <summary>네트워크 관리사 2급</summary>
 <div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
 
-![test](/assets/about/네트워크관리사2급.jpg)  
+![네트워크관리사](/assets/about/네트워크관리사2급.jpg)  
 
 </div>
 </details>

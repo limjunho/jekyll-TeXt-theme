@@ -5,7 +5,7 @@ tags: Network
 
 ## 개요  
 
-본 포스팅에서는 IP Fragmentation(단편화)에 대해 알아본다.
+본 문서에서는 IP Fragmentation(단편화)에 대해 알아본다.
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

@@ -5,7 +5,7 @@ tags: Network
 
 ## 개요  
 
-4가지 통신 방식 유니캐스트(Unicast), 브로드캐스트(Broadcast), 멀티캐스트(Multicast), 애니캐스트(Anycast)를 소개한다.  
+본 문서에서는 4가지 통신 방식 유니캐스트(Unicast), 브로드캐스트(Broadcast), 멀티캐스트(Multicast), 애니캐스트(Anycast)를 소개한다.  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

@@ -20,7 +20,10 @@ net_device 구조체는 네트워크 디바이스 드라이버에서 핵심이 �
 [netdevice.h](https://elixir.bootlin.com/linux/v5.10/source/include/linux/netdevice.h)  
 <details>
 <summary>struct net_device {...}</summary>
-<div markdown="1", outline=0>       
+<div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
 
 ```c
 struct net_device {

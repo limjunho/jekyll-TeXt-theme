@@ -43,6 +43,9 @@ key: page-about
 <details>
 <summary>대구·경북 아이디어톤(2020) - SW 설계 부문 최우수상</summary>
 <div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
 
 ![test](/assets/about/상장.png)  
 

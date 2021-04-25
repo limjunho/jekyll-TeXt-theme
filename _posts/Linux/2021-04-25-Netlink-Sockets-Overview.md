@@ -3,7 +3,7 @@ title: Netlink Sockets - Overview
 tags: Linux
 ---
 
-## 개요  
+## Summry  
 
 [Netlink Sockets - Overview](http://www.worldcolleges.info/sites/default/files/netlink.pdf)  
 본 문서에서는 위의 자료를 정리한다.
@@ -16,7 +16,8 @@ tags: Linux
 
 ## 1. Introduction 
 
-리눅스는 네트워킹 부분에 있어 firewalls, queue, class, filter 등의 Qos, traffic conditioning, netlink sockets 등을 포함한 많은 장점을 가지고 있다. 이 문서는 리눅스 시스템에서 제공하는 netlink sockets 에 대한 사용법 및 실행 등에 관하여 이야기 하고 있다. Section 2에서는 생성 및 사용, 커널에서 일반적인 프로토콜의 등록에 대한 이야기를 하고 있으며, Section 3에서는 커널에서 어떻게 packet handling을 하고 있는지와 user land에서 netlink 의 packaging 에 관한 설명을 한다. 또한 완벽한 예제를 부록에서 제공하고 있다.
+리눅스는 네트워킹 부분에 있어 firewalls, queue, class, filter 등의 Qos, traffic conditioning, netlink sockets 등을 포함한 많은 장점을 가지고 있다. 이 문서는 리눅스 시스템에서 제공하는 netlink sockets 에 대한 사용법 및 실행 등에 관하여 이야기 하고 있다.  
+Section 2에서는 생성 및 사용, 커널에서 일반적인 프로토콜의 등록에 대한 이야기를 하고 있으며, Section 3에서는 커널에서 어떻게 packet handling 을 하고 있는지와 user land에서 netlink 의 packaging 에 관한 설명을 한다. 또한 완벽한 예제를 부록에서 제공하고 있다.
 
 ## 2. Netlink sockets
 
@@ -25,13 +26,15 @@ tags: Linux
 ### 2.1 An Overview of netlink sockets
 
 **netlink 는 흔히 kernel module과 user space processes 사이에 정보전송에 사용된다.**  
-이것은 kernel/user space간 양방향통신(bi-directional communication)을 제공하며 standard sockets 을 기본으로 구성된 user space 와 kernel module 을 위한 내부의 standard API 를 사용하여 interface 를 제공하게 된다. Netlink sockets 은 user space 에서 다음과 같은 형태로 생성된다.  
+이것은 kernel/user space간 양방향통신(bi-directional communication)을 제공하며 standard sockets 을 기본으로 구성된 user space 와 kernel module 을 위한 내부의 standard API 를 사용하여 interface 를 제공하게 된다.  
+Netlink sockets 은 user space 에서 다음과 같은 형태로 생성된다.  
 
 ```c
 sock_fd = socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
 ```
 
-도메인은 AF_NETLINK를, 소켓타입은 SOCK_RAW 를 사용한다. Netlink가 datagram을 기본으로 동작하지만, SOCK RAW와 SOCK DGRAM은 netlink 에서 둘 다 가능한 값들이다. 그러나 netlink protocol 은 netlink group과 kernel module간의 통신을 위해 Netlink family를 선택한다. 아래는 규정된 netlink families 이다.  
+도메인은 AF_NETLINK를, 소켓타입은 SOCK_RAW 를 사용한다. Netlink가 datagram을 기본으로 동작하지만, SOCK RAW와 SOCK DGRAM은 netlink 에서 둘 다 가능한 값들이다. 그러나 netlink protocol 은 netlink group과 kernel module간의 통신을 위해 Netlink family를 선택한다.  
+아래는 규정된 netlink families 이다.  
 
 * NETLINK ROUTE : routing 업데이트 및 ipv4 routing table, network routes, ip addresses, link parameters, neighbour setups, queuing disciplines, traffic class와 packet classifier 에 대하여 NETLINK ROUTE 소켓을 통한 조정.
 * NETLINK FIREWALL : ipv4 firewall code를 통한 packet 전송의 입력
@@ -44,7 +47,8 @@ sock_fd = socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
 <br>
 
 ### 2.2 Protocol Registration
-실제로 netlink socket 이 생성 및 사용되기 이전에, kernel 에서 제공가능한 소켓타입이 어떤 것이 있는지 알아보자. 리눅스 시스템이 시작되고 메모리와 프로세스과 관리되며 모듈이 시작되었을 때, 어떤 코드들은 이미 끝난다. 이런 것들은 init/main.c 에 존재하는 setup() 함수에서 기본적으로 실행되는 것들이며 특별히 sock_init() 함수도 여기에 포함된다. 이 함수는 net/socket.c 에 존재하며 firewalls, protocols 등과 같은 것들을 초기화한다. 우리는 protocol의 초기화에 관심을 갖도록 하며 proto_init() 이 모든 protocols 에 대하여 그 역할을 한다.  
+실제로 netlink socket 이 생성 및 사용되기 이전에, kernel 에서 제공가능한 소켓타입이 어떤 것이 있는지 알아보자.  
+리눅스 시스템이 시작되고 메모리와 프로세스과 관리되며 모듈이 시작되었을 때, 어떤 코드들은 이미 끝난다. 이런 것들은 init/main.c 에 존재하는 setup() 함수에서 기본적으로 실행되는 것들이며 특별히 sock_init() 함수도 여기에 포함된다. 이 함수는 net/socket.c 에 존재하며 firewalls, protocols 등과 같은 것들을 초기화한다. 우리는 protocol의 초기화에 관심을 갖도록 하며 proto_init() 이 모든 protocols 에 대하여 그 역할을 한다.  
 Protocols에 관한 list의 유지관리는 net/protocols.c 에 있으며 아래에 그 보기가 있다.  
 
 ```c
@@ -215,8 +219,6 @@ struct proto_ops netlink_ops = {
 ```
 
 netlink socket 이 생성된 후, 다음 과정은 socket 을 bind 하는 것이다. Bind 가 user level 의 관심사일 때 sys_bind 함수는 kernel 에서 불려진다. 이것을 순서대로 부름으로서 socket 생성에 bind 하게 된다.  
-
-<br>
 
 netlink_bind 안에서 netlink_insert() 함수는 nl_table 로 불리우는 sock structure list 를 netlink socket 의 entry 로 생성한다.  
 

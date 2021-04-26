@@ -1,6 +1,6 @@
 ---
-title: C 전처리 지시어
-tags: C
+title: asmlinkage 
+tags: C Linux
 ---
 
 ## Summry  

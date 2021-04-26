@@ -1,5 +1,5 @@
 ---
-title: Netlink Sockets - Overview
+title: Linux discriptor
 tags: Linux
 ---
 

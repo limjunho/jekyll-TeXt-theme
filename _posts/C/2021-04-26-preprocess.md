@@ -8,17 +8,17 @@ tags: C
 전처리(preprocessing)란 컴파일 이전에 미리 처리되는 문장으로 전처리에 사용되는 작업 지시어를 전처리 지시어(preprocessing directive)라 한다.  
 
 **전처리 지시어 종류**  
-* 파일처리
+* **파일처리**
     * #include
-* 형태 정의
+* **형태 정의**
     * #define, #undef
-* 조건 처리
+* **조건 처리**
     * #if, #else, #elif, #endif, #ifdef, #ifndef
-* 에러 처리
+* **에러 처리**
     * #error 
-* 디버깅
+* **디버깅**
     * #line 
-* 컴파일 옵션 처리
+* **컴파일 옵션 처리**
     * #pragma 
 
 본 문서에서는 조건 처리에 대한 전처리 지시어를 정리한다.  

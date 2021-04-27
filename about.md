@@ -29,7 +29,6 @@ key: page-about
 
 ## Personal Information  
 
-![image](/favicon.ico)  
 * **이름 : 임준호**
 * **이름(영문) : Limjunho**  
 * **전공 : 사이버보안전공**

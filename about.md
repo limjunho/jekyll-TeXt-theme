@@ -98,7 +98,7 @@ key: page-about
     *:focus { outline:none; }
 </style>
 
-![리눅스마스터](/assets/about/리눅스마스터2급.jpg)  
+![리눅스마스터](/assets/about/linuxmaster.jpg)  
 
 </div>
 </details>

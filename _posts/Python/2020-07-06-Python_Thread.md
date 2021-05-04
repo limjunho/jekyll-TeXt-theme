@@ -1,5 +1,5 @@
 ---
-title: C Thread example
+title: Python Thread example
 tags: Python
 ---
 

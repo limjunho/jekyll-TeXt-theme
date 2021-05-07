@@ -1,6 +1,6 @@
 ---
 title: Socket Parameters
-tags: C Linux Socket
+tags: Socket
 ---
 
 ## Summry  

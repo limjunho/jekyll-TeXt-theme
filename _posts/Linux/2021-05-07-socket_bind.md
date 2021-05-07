@@ -1,6 +1,6 @@
 ---
 title: Socket bind
-tags: C Linux Socket
+tags: C Socket
 ---
 
 ## Summry  

@@ -6,7 +6,7 @@ tags: Socket
 ## Summry  
 
 리눅스/유닉스 시스템에서는 소켓(socket)의 통신 대상을 지정하기 위해 주소(address)를 사용한다. 이 주소라는 것을 저장하거나 표현하는데 사용하는 구조체가 struct sockaddr 이다.  
-**bind( ), connect( ) 와 같은 함수들이 2번째 매개변수로써 바로 이 struct sockaddr 을 받는다.**  
+**bind( ), connect( ) 와 같은 함수들이 2번째 파라미터로 struct sockaddr 을 받는다.**  
 
 본 문서에서는 socketaddr 구조체의 종류와 역할을 정리한다.  
 
@@ -122,7 +122,7 @@ struct in6_addr {
 ```
 
 **IPv6 주소체계의 소켓주소를 사용하는 구조체이다.**  
-IPv4에 사용되는 struct sockaddr_in과는 달리 struct sockaddr_in6는 bzero( ) 또는 memset( ) 과 같은 함수를 통해 0으로 초기화 해주어야 하는 몇가지 멤버변수들이 추가되어 있다. 만약 strcut sockaddr_in6을 사용하기 전에 모두 0으로 초기화 하지 않으면, 프로그램은 정의되지 않은 동작을 야기할 수 있으므로 주의 해야 한다.  
+IPv4에 사용되는 struct sockaddr_in과는 달리 struct sockaddr_in6는 bzero( ) 또는 memset( ) 과 같은 함수를 통해 0으로 초기화 해주어야 하는 몇가지 멤버변수들이 추가되어 있다. 만약 strcut sockaddr_in6을 사용하기 전에 모두 0으로 초기화 하지 않으면, 프로그램은 정의되지 않은 동작을 야기할 수 있으므로 주의가 필요하다.  
 
 * sin6_family : 항상 AF_INET6 이어야만 한다.
 * sin6_port : IPv6 포트를 저장하는 변수이다.

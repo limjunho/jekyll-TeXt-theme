@@ -25,7 +25,7 @@ tags: Socket
 **INADDR_ANY 를 사용하면 192.168.0.1 로 오는 데이터나 192.168.0.2 로 오는 데이터를 모두 처리한다. 즉 여러 ip주소에 들어오는 데이터를 모두 수신한다.**  
 
 ## example
-
+TCP Server
 ```c
 #include <stdio.h>
 #include <stdlib.h>

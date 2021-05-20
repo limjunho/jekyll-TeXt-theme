@@ -1,6 +1,6 @@
 ---
 title: 시스템 콜(System Call)
-tags: OperratingSystem
+tags: OperatingSystem
 ---
 
 ## Summry  

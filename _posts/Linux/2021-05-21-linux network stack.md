@@ -1,6 +1,6 @@
 ---
 title: Linux network stack
-tags: Linux
+tags: Linux Network
 ---
 
 ## Summry  
@@ -17,6 +17,8 @@ tags: Linux
 
 여러 레이어가 있지만, 크게 유저(user) 영역, 커널(kernel) 영역, 디바이스(device) 영역으로 나눌 수 있다. 유저 영역과 커널 영역에서의 작업은 CPU가 수행한다. 이 유저 영역과 커널 영역은 디바이스 영역과 구별하기 위해 호스트(host)라고 부른다. 여기서 디바이스는 패킷을 송수신하는 NIC(Network Interface Card)이다. 흔히 부르는 랜카드보다 더 정확한 용어이다.  
 
+****
+
 ## Send Data
 
 ![그림1](/assets/Linux/Linux_network_stack/1.png)
@@ -28,12 +30,10 @@ tags: Linux
 **Application**  
 우선 애플리케이션이 전송할 데이터를 생성하고(그림 1에서 User data 상자), write 시스템 콜을 호출해서 데이터를 보낸다. 소켓은 이미 생성되어 연결되어 있다고 가정했을 때, 시스템 콜을 호출하면 커널 영역으로 전환된다.  
 
-> ****  
-
 ### Kernel Space
 
 **File**  
-Linux나 Unix를 포함한 POSIX 계열 운영체제는 소켓을 file descriptor 로 애플리케이션에 노출한다. 이런 POSIX 계열의 운영체제에서 소켓은 파일의 한 종류다. 파일(file) 레이어는 단순한 검사만 하고 파일 구조체에 연결된 소켓 구조체를 사용해서 소켓 함수를 호출한다.  
+Linux 나 Unix 를 포함한 POSIX 계열 운영체제는 소켓을 file descriptor 로 애플리케이션에 노출한다. 이런 POSIX 계열의 운영체제에서 소켓은 파일의 한 종류다. 파일(file) 레이어는 단순한 검사만 하고 파일 구조체에 연결된 소켓 구조체를 사용해서 소켓 함수를 호출한다.  
 
 **Socekts**  
 커널 소켓은 두 개의 버퍼를 가지고 있다. 송신용으로 준비한 send socket buffer, 수신용으로 준비한 receive socket buffer 이다. Write 시스템 콜을 호출하면 유저 영역의 데이터가 커널 메모리로 복사되고, send socket buffer 의 뒷부분에 추가된다. 순서대로 전송하기 위해서다. 그림에서 옅은 회색 상자가 이미 socket buffer 에 존재하는 데이터를 의미한다. 이 다음으로 TCP 를 호출한다.  
@@ -42,6 +42,7 @@ Linux나 Unix를 포함한 POSIX 계열 운영체제는 소켓을 file descripto
 소켓과 연결된 TCP Control Block(TCB) 구조체가 있다. TCB에는 TCP 연결 처리에 필요한 정보가 있다. TCB 에 있는 데이터는 connection state(LISTEN, ESTABLISHED, TIME_WAIT 등), receive window, congestion window, sequence 번호, 재전송 타이머 등이다.  
 
 현재 TCP 상태가 데이터 전송을 허용하면 새로운 TCP segment, 즉 패킷을 생성한다. Flow control 같은 이유로 데이터 전송이 불가능하면 시스템 콜은 여기서 끝나고, 유저 모드로 돌아간다(즉, 애플리케이션으로 제어권이 넘어간다).  
+
 TCP segment 에는 TCP 헤더와 페이로드(payload)가 있다. 페이로드에는 ACK를 받지 않은 send socket buffer 에 있는 데이터가 담겨 있다. 페이로드의 최대 길이는 receive window, congestion window, MSS(Maximum Segment Size) 중 최대 값이다. 그리고 TCP checksum 을 계산한다. 이 checksum 계산에는 pseudo 헤더 정보(IP 주소들, segment 길이, 프로토콜 번호)를 포함시킨다. 여기서 TCP 상태에 따라 패킷을 한 개 이상 전송할 수 있다.  
 
 *사실 요즘의 네트워크 스택에서는 checksum offload 기술을 사용하기 때문에, 커널이 직접 TCP checksum 을 계산하지 않고 대신 NIC가 checksum 을 계산한다. 여기서는 설명의 편의를 위해 커널이 checksum 을 계산한다고 가정한다.*  
@@ -66,11 +67,13 @@ IP routing 을 하면 그 결과물로 next hop IP 와 해당 IP 로 패킷 전�
 ### Device Space
 
 **NIC**  
-NIC 는 패킷 전송 요청을 받고, 메인 메모리에 있는 패킷을 자신의 메모리로 복사하고, 네트워크 선으로 전송한다. 이때 Ethernet 표준에 따라 IFG(Inter-Frame Gap), preamble, 그리고 CRC를 패킷에 추가한다. IFG, preamble 은 패킷의 시작을 판단하기 위해 사용하고(네트워킹 용어로는 framing), CRC는 데이터 보호를 위해 사용한다(TCP, IP checksum과 같은 용도이다). 패킷 전송은 Ethernet 의 물리적 속도, 그리고 Ethernet flow control 에 따라 전송할 수 있는 상황일 때 시작된다. 회의장에서 발언권을 얻고 말하는 것과 비슷하다.  
+NIC 는 패킷 전송 요청을 받고, 메인 메모리에 있는 패킷을 자신의 메모리로 복사하고, 네트워크 선으로 전송한다. 이때 Ethernet 표준에 따라 IFG(Inter-Frame Gap), preamble, 그리고 CRC 를 패킷에 추가한다. IFG, preamble 은 패킷의 시작을 판단하기 위해 사용하고(네트워킹 용어로는 framing), CRC 는 데이터 보호를 위해 사용한다(TCP, IP checksum과 같은 용도이다). 패킷 전송은 Ethernet 의 물리적 속도, 그리고 Ethernet flow control 에 따라 전송할 수 있는 상황일 때 시작된다.  
 
 NIC 가 패킷을 전송할 때 NIC 는 호스트 CPU 에 인터럽트(interrupt)를 발생시킨다. 모든 인터럽트에는 인터럽트 번호가 있으며, 운영체제는 이 번호를 이용하여 이 인터럽트를 처리할 수 있는 적합한 드라이버를 찾는다. 드라이버는 인터럽트를 처리할 수 있는 함수(인터럽트 핸들러)를 드라이브가 가동되었을 때 운영체제에 등록해둔다. 운영체제가 핸들러를 호출하고, 핸들러는 전송된 패킷을 운영체제에 반환한다.  
 
 지금까지 설명한 것은 **애플리케이션에서 쓰기를 하였을 때 데이터가 커널과 디바이스를 거쳐 전송되는 과정**이다. 그런데 애플리케이션이 쓰기 요청을 직접적으로 하지 않아도 커널이 TCP 를 호출해서 패킷을 전송하는 경우가 있다. 예를 들어 ACK을 받아 receive window 가 늘어나면 socket buffer 에 남아있는 데이터를 포함한 TCP segment 를 생성하여 상대편에 전송한다.  
+
+****
 
 ## Receive Data
 
@@ -81,7 +84,7 @@ NIC 가 패킷을 전송할 때 NIC 는 호스트 CPU 에 인터럽트(interrupt
 ### Device Space
 
 **NIC**  
-우선 NIC 가 패킷을 자신의 메모리에 기록한다. CRC 검사로 패킷이 올바른지 검사하고, 호스트의 메모리버퍼로 전송한다. 이 버퍼는 드라이버가 커널에 요청하여 패킷 수신용으로 미리 할당한 메모리이고, 할당을 받은 후 드라이버는 NIC에 메모리 주소와 크기를 알려 준다. NIC 가 패킷을 받았는데, 드라이버가 미리 할당해 놓은 호스트 메모리 버퍼가 없으면 NIC 가 패킷을 버릴 수 있다 (packet drop).  
+우선 NIC 가 패킷을 자신의 메모리에 기록한다. CRC 검사로 패킷이 올바른지 검사하고, 호스트의 메모리버퍼로 전송한다. 이 버퍼는 드라이버가 커널에 요청하여 패킷 수신용으로 미리 할당한 메모리이고, 할당을 받은 후 드라이버는 NIC 에 메모리 주소와 크기를 알려 준다. NIC 가 패킷을 받았는데, 드라이버가 미리 할당해 놓은 호스트 메모리 버퍼가 없으면 NIC 가 패킷을 버릴 수 있다 (packet drop).  
 
 패킷을 호스트 메모리로 전송한 후, NIC 가 호스트운영체제에 인터럽트를 보낸다.  
 
@@ -91,6 +94,8 @@ NIC 가 패킷을 전송할 때 NIC 는 호스트 CPU 에 인터럽트(interrupt
 드라이버가 새로운 패킷을 보고 자신이 처리할 수 있는 패킷인지 검사한다. 여기까지는 제조사가 정의한 드라이버-NIC 통신 규약을 사용한다.  
 
 드라이버가 상위 레이어로 패킷을 전달하려면 운영체제가 이해할 수 있도록, 받은 패킷을 운영체제가 사용하는 패킷 구조체로 포장해야 한다. 예를 들어, Linux 의 sk_buff, BSD 계열 커널의 mbuf, 그리고 Microsoft Windows 의 NET_BUFFER_LIST 가 운영체제의 패킷 구조체이다. 드라이버는 이렇게 포장한 패킷을 상위 레이어로 전달한다.  
+
+[sk_buff 구조체 함수 정리](https://limjunho.github.io/2021/04/20/sk-buff.html)  
 
 **Ethernet**  
 Ethernet 레이어에서도 패킷이 올바른지 검사하고, 상위 프로토콜(네트워크 프로토콜)을 찾는다(de-multiplex). 이때 Ethernet 헤더의 ethertype  값을 사용한다. IPv4 ethertype 은 0x0800 이다. Ethernet 헤더를 제거하고 IP 레이어로 패킷을 전달한다.  
@@ -128,15 +133,18 @@ Linux나 Unix를 포함한 POSIX 계열 운영체제는 소켓을 file descripto
 
 **위의 그림은 패킷 전송 과정이다.**  
 
-드라이버가 상위 레이어로부터 패킷을 받고, NIC 가 이해하는 전송 요청(send descriptor)을 생성한다. send descriptor 에는 기본적으로 패킷 크기, 메모리 주소를 포함하도록 한다. NIC 는 메모리에 접근할 때 필요한 물리적 주소가 필요하다, 따라서 드라이버가 패킷의 가상 주소를 물리적 주소로 변경한다. 그리고 send descriptor 를 TX ring 에 추가한다(1). TX ring 이 전송 요청 링이다.  
-
-그리고 NIC에 새로운 요청이 있다고 알린다(2). 특정 NIC 메모리 주소에 드라이버가 직접 데이터를 쓴다. 이와 같이 CPU 가 디바이스에 직접 데이터를 전송하는 방식을 PIO(Programmed I/O)라고 한다.  
-
-연락을 받은 NIC 는 TX ring의 send descriptor를 호스트 메모리에서 가져온다(3). CPU 의 개입 없이 디바이스가 직접 메모리에 접근하기 때문에, 이와 같은 접근을 DMA(Direct Memory Access)라고 부른다.  
-
-Send descriptor 를 가져와서 패킷 주소와 크기를 판단하고, 실제 패킷을 호스트 메모리에서 가져온다(4). Checksum offload 방식을 사용하면 메모리에서 패킷 데이터를 가져올 때 checksum 을 NIC 가 계산하도록 한다. 따라서 오버헤드는 거의 발생하지 않는다.  
-
-NIC 가 패킷을 전송하고(5), 패킷을 몇 개 전송했는지 호스트의 메모리에 기록한다(6). 그리고 인터럽트를 보낸다(7). 드라이버는 전송된 패킷 수를 읽어 와서 현재까지 전송된 패킷을 반환한다.  
+1. 드라이버가 상위 레이어로부터 패킷을 받고, NIC 가 이해하는 전송 요청(send descriptor)을 생성한다.  NIC 는 메모리에 접근할 때 필요한 물리적 주소가 필요하다, 따라서 드라이버가 패킷의 가상 주소를 물리적 주소로 변경한다. 그리고 send descriptor 를 TX ring 에 추가한다. 
+   * send descriptor 에는 기본적으로 패킷 크기, 메모리 주소를 포함하도록 한다.
+   * TX ring 이 전송 요청 링이다.  
+2. 그리고 NIC에 새로운 요청이 있다고 알린다. 
+   * 특정 NIC 메모리 주소에 드라이버가 직접 데이터를 쓴다. 이와 같이 CPU 가 디바이스에 직접 데이터를 전송하는 방식을 PIO(Programmed I/O)라고 한다.  
+3. 연락을 받은 NIC 는 TX ring의 send descriptor를 호스트 메모리에서 가져온다. 
+   * CPU 의 개입 없이 디바이스가 직접 메모리에 접근하기 때문에, 이와 같은 접근을 DMA(Direct Memory Access)라고 부른다.  
+4. Send descriptor 를 가져와서 패킷 주소와 크기를 판단하고, 실제 패킷을 호스트 메모리에서 가져온다. 
+   * Checksum offload 방식을 사용하면 메모리에서 패킷 데이터를 가져올 때 checksum 을 NIC 가 계산하도록 한다. 따라서 오버헤드는 거의 발생하지 않는다.  
+5. NIC 가 패킷을 전송한다.
+6. 패킷을 몇 개 전송했는지 호스트의 메모리에 기록한다. 
+7. 그리고 인터럽트를 보낸다. 드라이버는 전송된 패킷 수를 읽어 와서 현재까지 전송된 패킷을 반환한다.  
 
 ### Receive Packet
 
@@ -144,11 +152,18 @@ NIC 가 패킷을 전송하고(5), 패킷을 몇 개 전송했는지 호스트�
 
 **위의 그림은 패킷 수신 과정이다.**  
 
-우선 드라이버가 패킷 수신용 호스트 메모리 버퍼를 할당하고, receive descriptor 를 생성한다. receive descriptor 는 기본으로 버퍼의 크기, 주소를 포함한다. send descriptor 와 같이 DMA 가 사용하는 물리적 주소를 descriptor 에 저장한다. 그리고 RX ring 에 descriptor 를 추가한다(1). 결국 이것이 수신 요청이고, RX ring 은 수신 요청 링이다.  
-
-드라이버가 PIO 를 통해서 NIC 에 새로운 descriptor 가 있다고 알린다(2). NIC는 RX ring 의 새로운 descriptor 를 가져온다. 그리고 descriptor 에 포함된 버퍼의 크기, 위치를 NIC 메모리에 보관한다(3).  
-
-이후 패킷이 도착하면(4), NIC는 호스트 메모리 버퍼로 패킷을 전송한다(5). Checksum offload 기능이 있다면 NIC가 이때 checksum 을 계산한다. 도착한 패킷의 실제 크기와 checksum 결과, 그 외 다른 정보는 별도의 링(receive return ring)에 기록한다(6). Receive return ring 은 수신 요청 처리 결과, 즉 응답을 저장하는 링이다. 그리고 NIC 가 인터럽트를 보낸다(7). 드라이버는 receive return ring 에서 패킷 정보를 가져와서 받은 패킷을 처리한다. 필요에 따라 새로운 메모리 버퍼를 할당하고 (1)~(2) 단계를 반복한다.  
+1. 우선 드라이버가 패킷 수신용 호스트 메모리 버퍼를 할당하고, receive descriptor 를 생성한다. receive descriptor 는 기본으로 버퍼의 크기, 주소를 포함한다. send descriptor 와 같이 DMA 가 사용하는 물리적 주소를 descriptor 에 저장한다. 그리고 RX ring 에 descriptor 를 추가한다(1). 
+   * 결국 이것이 수신 요청이고, RX ring 은 수신 요청 링이다.  
+2. 드라이버가 PIO 를 통해서 NIC 에 새로운 descriptor 가 있다고 알린다. 
+3. NIC는 RX ring 의 새로운 descriptor 를 가져온다. 그리고 descriptor 에 포함된 버퍼의 크기, 위치를 NIC 메모리에 보관한다.
+4. 패킷이 도착한다. 
+5. NIC는 호스트 메모리 버퍼로 패킷을 전송한다. 
+   * Checksum offload 기능이 있다면 NIC가 이때 checksum 을 계산한다. 
+6. 도착한 패킷의 실제 크기와 checksum 결과, 그 외 다른 정보는 별도의 링(receive return ring)에 기록한다. 
+   * Receive return ring 은 수신 요청 처리 결과, 즉 응답을 저장하는 링이다. 
+7. NIC 가 인터럽트를 보낸다. 
+   * 드라이버는 receive return ring 에서 패킷 정보를 가져와서 받은 패킷을 처리한다. 
+   * 필요에 따라 새로운 메모리 버퍼를 할당하고 (1)~(2) 단계를 반복한다.  
 
 스택 튜닝이라고 하면 흔히 ring, interrupt 설정을 조절해야 한다고 이야기한다. TX ring 이 크면 한 번에 많은 수의 전송 요청을 할 수 있다. RX ring 이 크면 한 번에 많은 수의 수신을 할 수 있다. 패킷 송신, 수신 burst 가 많은 워크로드에는 큰 링이 도움이 된다. 그리고 CPU 가 인터럽트를 처리하는 오버헤드가 크기 때문에, 대개 NIC 은 인터럽트 회수를 줄이기 위해 타이머를 사용한다. 패킷을 전송하고 수신할 때 매번 인터럽트를 보내지 않고 주기적으로 모아서 보낸다(interrupt coalescing).  
 

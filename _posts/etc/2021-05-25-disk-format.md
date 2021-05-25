@@ -17,7 +17,7 @@ tags: etc
 
 ![그림](/assets/etc/diskformat/1.PNG)  
 
-1. Ctrl + r 단축키로 실행창을 실행한 뒤 diskpart 입력하여 diskpart 실행  
+1. ```window + r``` 단축키로 실행창을 실행한 뒤 diskpart 입력하여 diskpart 실행  
 
 2. ```list disk``` 디스크 목록 확인  
 

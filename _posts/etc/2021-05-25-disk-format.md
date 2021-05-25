@@ -33,7 +33,7 @@ tags: etc
 
 8. ```active``` 선택한 파티션 활성화  
 
-9. ```format fs=ntfs quick``` 파일 시스템을 ntfs 로 선택하여 디스크 포맷  
-9. ```format fs=fat32 quick``` 파일 시스템을 FAT32 로 선택하여 디스크 포맷  
+9. ```format fs=ntfs quick``` 파일 시스템을 ntfs 로 선택하여 디스크 포맷 또는  
+```format fs=fat32 quick``` 파일 시스템을 FAT32 로 선택하여 디스크 포맷  
 
 **완료**

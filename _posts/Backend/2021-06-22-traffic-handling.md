@@ -74,6 +74,15 @@ L7 Load Balancer는 위와 같은 L4 Load Balancer의 기능을 포함하는 것
     * 클라이언트의 연결 정보를 저장하는 세션이 로드밸런싱을 통해 하나의 서버 장비에 저장이 되는 경우, 추후 다른 서버로 접속하게 되면, 해당 클라이언트의 세션이 유지되지 않는다는 것이다. 즉, 서버에 액세스 할 때마다 다른 세션을 사용한다면 특정 사용자의 정보를 일관성있게 유지할 수 없게 된다.
     * 이러한 문제를 해결하기 위해 세션을 고정(session sticky)한다. 하지만 고정된 세션의 노드에 장애가 발생하면 고정한 의미가 없어진다.
 
+### L4/L7 Load Balancer의 성능 지표
+
+1. **초당 연결 수(Connections per second)**
+    * 최대 처리 가능한 초당 TCP 세션의 개수를 의미
+2. **동시 연결 수(Concurrent connections)**
+    * 동시에 최대로 세션을 유지할 수 있는 개수를 의미
+3. **처리용량(Throughput)**
+    * UDP Protocol에 대한 Load Balancing 성능 지표이며 단위는 bps(bit per second) 또는 pps(packet per second)를 사용
+
 ## 클러스터링(Clustering)
 
 Clustering이란 여러 대의 컴퓨터를 똑같은 구성의 서버군을 병렬로 연결한 시스템으로 마치 하나의 컴퓨터처럼 사용하는 것을 말한다.

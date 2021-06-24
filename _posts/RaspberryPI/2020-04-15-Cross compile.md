@@ -42,7 +42,7 @@ $ sudo apt-get install bison flex libssl-dev bc
 * 크로스컴파일시 시스템에 필요한 툴  
 
 ```bash
-$ sudo apt-get install gcc-arm-linux-gnueabih
+$ sudo apt-get install gcc-arm-linux-gnueabihf
 ```
 * ARM코어용 크로스 컴파일러  
 

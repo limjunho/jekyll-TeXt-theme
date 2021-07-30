@@ -22,7 +22,7 @@ database naming conventions 즉, 다른사람들이 주로 사용하는 암묵�
 4. 빈칸 대신 _(underscore)를 사용할 것
 5. 문자로 시작하고 _(underscore)로 끝나지 않도록 할 것
 6. _(underscore) 두 번 이상 사용하지 말 것
-7. 축양형은 되도록 사용하지 말 것
+7. 축약형은 되도록 사용하지 말 것
 
 EX)
 ```sql
@@ -55,4 +55,4 @@ CREATE TABLE test_table (idx INT PRIMARY KEY AUTO_INCREMENT);
 ## Reference
 
 > [MySQL 데이터베이스명, 테이블명, 컬럼명은 어떻게 지어야 할까? - Tap to restart](https://taptorestart.tistory.com/entry/MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%85-%ED%85%8C%EC%9D%B4%EB%B8%94%EB%AA%85-%EC%BB%AC%EB%9F%BC%EB%AA%85%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%A7%80%EC%96%B4%EC%95%BC-%ED%95%A0%EA%B9%8C)  
-> [SQL Style Guide](https://www.sqlstyle.guide/)
+> [SQL Style Guide](https://www.sqlstyle.guide/)  

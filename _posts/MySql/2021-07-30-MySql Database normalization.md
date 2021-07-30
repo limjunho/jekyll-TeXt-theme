@@ -20,8 +20,8 @@ tags: MySql
 **Database normalization(데이터베이스 정규화)란 데이터베이스의 설계를 재구성하는 테크닉으로 불필요한 데이터를 없애고 insert, update, delete등의 작업 시 발생할 수 있는 문제들을 해결할 수 있다.**  
 
 정규화의 목적은 주로 두 가지이다.  
-1. 데이터 중복(data redundancy)를 제거한다.  
-2. 테이블의 구성을 논리적이고 직관적으로 구성한다.  
+1. 데이터 중복(data redundancy)를 제거  
+2. 테이블의 구성을 논리적이고 직관적으로 구성  
 
 먼저 정규화를 진행하지 않았을 경우 문제점을 살펴본다.  
 
@@ -70,6 +70,7 @@ tags: MySql
 위 테이블의 경우 기본키는 (Student, Subject) 두 개로 볼 수 있다. 이 두 개가 합쳐져야 한 로우를 구분할 수가 있다. Age의 경우 이 기본키중에 Student에만 종속되어 있기 때문에 Student 컬럼의 값을 알면 Age의 값을 알 수 있다. 따라서 Age가 두 번 들어가는 것은 불필요하다.  
 
 **student_table**  
+
 |student|age|
 |:-:|----|
 |Adam|15|
@@ -77,6 +78,7 @@ tags: MySql
 |Stuart|17|
 
 **subject_table**  
+
 |student|subject|
 |:-:|-------|
 |Adam|Biology|
@@ -100,10 +102,12 @@ Student_id가 기본키이고, 기본키가 하나이므로 2차 정규형은 �
 3차 정규화는 2차정규화와 마찬가지로 테이블을 분리함으로써 해결할 수 있는데, 아래처럼 두 개의 테이블로 나눔으로써 3차 정규형을 만족할 수 있다. 이를 통해 데이터가 논리적인 단위(학생, 주소)로 분리될 수 있고, 데이터의 redundancy도 줄었음을 알 수 있다.  
 
 **student_detail_table**  
+
 |idx|name|birthday|ZIP_code|
 |:-:|----|--------|--------|
 
 **address_table**  
+
 |ZIP_code|street|city|state|
 |--------|------|----|-----|
 
@@ -122,13 +126,15 @@ BCNF는 (Boyce and Codd Normal Form) 3차 정규형을 조금 더 강화한 버�
 
 위와 같이 테이블이 구성된 경우에 데이터가 중복되고, 갱신 이상이 발생힌다. 예를 들어 Mr.Lim이 강의하는 과목명이 바뀌었다면 두 개의 로우를 갱신해야 하므로 이를 해결하기 위해 마찬가지로 테이블을 분리힌다.
 
-**교수 테이블**   
+**교수 테이블**  
+
 |교수|과목|
 |:-:|:---|
 |Mr.Kim|network|
 |Mr.Lim|data structure|
 
 **수강 테이블**  
+
 |학생|과목|학점|
 |:--:|:--:|:-:|
 |1|network|A|

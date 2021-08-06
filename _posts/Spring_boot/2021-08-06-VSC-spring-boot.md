@@ -25,19 +25,19 @@ tags: Spring boot
 
 ![그림1](/assets/Spring_boot/VSC-spring-boot/1.PNG)  
 
-* **Java Extension Pack은 Visual Studio Code에서 Java 응용 프로그램을 작성, 테스트 및 디버그하는 데 도움이 될 수 있는 널리 사용되는 확장팩.**  
+* **Java Extension Pack은 Visual Studio Code에서 Java 응용 프로그램을 작성, 테스트 및 디버그하는 데 도움이 될 수 있는 널리 사용되는 확장팩이다.**  
 
 ### Spring Boot Extenstion Pack
 
 ![그림2](/assets/Spring_boot/VSC-spring-boot/2.PNG)  
 
-* **Spring Boot 애플리케이션 개발 및 배포를 위한 확장팩.**
+* **Spring Boot 애플리케이션 개발 및 배포를 위한 확장팩이다.**
 
 ### Lombok Annotations Support for VS Code
 
 ![그림3](/assets/Spring_boot/VSC-spring-boot/3.PNG)  
 
-* **Java 라이브러리로 반복되는 getter, setter, toString .. 등의 반복 메서드 작성 코드를 줄여주는 코드 다이어트 라이브러리.**  
+* **Java 라이브러리로 반복되는 getter, setter, toString .. 등의 반복 메서드 작성 코드를 줄여준다.**  
 
 [Lombok Library 정리글](https://limjunho.github.io/2021/08/01/JAVA-LOMBOK.html)
 
@@ -45,7 +45,7 @@ tags: Spring boot
 
 ![그림4](/assets/Spring_boot/VSC-spring-boot/4.PNG)  
 
-* **Spring Initializr Java Support’ 확장팩으로 VSCode 내에서 Spring Initialzr(https://start.spring.io/) API를 이용하여 스프링 부트 프로젝트를 구성할 수 있다.**
+* **Spring Initializr Java Support 확장팩으로 VSCode 내에서 Spring Initialzr(https://start.spring.io/) API를 이용하여 스프링 부트 프로젝트를 구성할 수 있다.**
 
 ### Spring Boot Dashboard
 
@@ -104,14 +104,13 @@ public class TestController {
 
 ## 실행
 
-코드 작성을 했다면 메인클래스(@SpringBootTest 와 메인메서드(public static void main(String[] args)) 선언)를 선택하여 우클릭 후 Run 을 실행하거나 소스코드를 열면 메인메서드 위에 Run | Debug 가 노출된다.
+**코드 작성을 했다면 메인클래스(@SpringBootTest 와 메인메서드(public static void main(String[] args)) 선언)를 선택하여 우클릭 후 Run 을 실행하거나 소스코드를 열면 메인메서드 위에 Run \| Debug 가 노출된다.**  
 
 ![그림7](/assets/Spring_boot/VSC-spring-boot/7.PNG)  
 
 ![그림8](/assets/Spring_boot/VSC-spring-boot/8.PNG)  
 
-해당 uri로 접근(get) 시 test!! 문자열을 확인할 수 있다.  
-
+* **해당 uri로 접근(get) 시 test!! 문자열을 확인할 수 있다.**  
 * **별도 설정을 하지 않는다면 기본 port는 8080이다.**  
 ## Reference
 

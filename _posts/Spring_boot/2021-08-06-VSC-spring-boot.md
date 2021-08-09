@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Code - Spring boot 개발 환경 세팅
-tags: Spring boot
+tags: Springboot
 ---
 
 ## Summry  

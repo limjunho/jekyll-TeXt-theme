@@ -198,6 +198,7 @@ public class ApplicationConfig {
 **@Autowired와 마찬가지로 Bean 객체를 주입해주는데 차이점은 Autowired는 타입으로, Resource는 이름으로 연결해준다.**  
 
 ```javax.annotation.Resource```
+
 * 표준 자바(JSR-250 표준) Annotation으로, Spring Framework 2.5.* 부터 지원 가능한 Annotation이다.
 * Annotation 사용으로 인해 특정 Framework에 종속적인 어플리케이션을 구성하지 않기 위해서는 @Resource를 사용할 것을 권장한다.
 * @Resource를 사용하기 위해서는 class path 내에 jsr250-api.jar 파일을 추가해야 한다.
@@ -239,6 +240,7 @@ mail.defaultRecipients[1] = customer@mail.com
 **properties에서 값을 가져와 적용할 때 사용한다.**  
 
 ```@Value("${value.from.file}")```
+
 private String valueFromFile; 이라고 구성되어 있으면 value.from.file의 값을 가져와서 해당 변수에 주입해준다.  
 
 *spEL을 이용해서 조금 더 고급스럽게 쓸 수 있다.*  
@@ -312,7 +314,7 @@ public String view(@CookieValue(value="auth")String auth){...};
 ### @ModelAttribute
 
 **view에서 전달해주는 parameter를 Class(VO/DTO)의 멤버 변수로 binding 해주는 Annotation이다.**  
-* binding 기준은 <input name="id" /> 처럼 어떤 태그의 name값이 해당 Class의 멤버 변수명과 일치해야하고 setmethod명도 일치해야한다.
+* binding 기준은 ```<input name="id" />``` 처럼 어떤 태그의 name값이 해당 Class의 멤버 변수명과 일치해야하고 setmethod명도 일치해야한다.
 
 ```java
 class Person{
@@ -396,7 +398,7 @@ try {
 HTTP GET 요청에 대해 매칭되는 request parameter 값이 자동으로 들어간다.
 url 뒤에 붙는 parameter 값을 가져올 때 사용한다.
 
-```http://localhost:8080/home?index=1&page=2```
+```http://localhost:8080/home?index=1&page=2```  
 
 ```java
 @GetMapping("/home")
@@ -448,7 +450,7 @@ public ResponseEntity<?> someMethod(@PathVariable int id) {
 * **uri에서 각 구분자에 들어오는 값을 처리해야 할 때 사용한다.**
 * REST API에서 값을 호출할 때 주로 많이 사용한다.
 
-```http://localhost:8080/index/1```
+```http://localhost:8080/index/1```  
 
 ```java
 @PostMapping("/index/{idx}")

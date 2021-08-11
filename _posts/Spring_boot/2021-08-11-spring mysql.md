@@ -17,7 +17,7 @@ tags: Springboot JAVA
 
 ---
 
-## Mybatis 개념,
+## Mybatis 개념
 
 **개발자가 지정한 SQL, 저장 프로시저 그리고 몇 가지 고급 매핑을 지원하는 SQL Mapper이다.**  
 * JDBC로 처리하는 상당 부분의 코드와 파라미터 설정 및 결과 매핑을 대신해준다.
@@ -284,8 +284,6 @@ public class TestController {
 ```
 
 **TestController.java**
-
-## 정리
 
 **위의 코드를 모두 작성하였다면 /test uri로 접근 시 portfolio 테이블의 모든 정보를 확인할 수 있을 것이다.**  
 

@@ -105,8 +105,26 @@ mybatis.config=mybatis-config.xml
 mybatis.type-aliases-package: com.example.demo.model
 mybatis.mapper-locations: mybatis/mapper/*.xml
 ```
+**mybatis.mapper-locations은 알맞게 설정해주어야 에러가 발생하지 않는다.**  
 
-### 3. DTO 작성
+### 3. mybatis config file 설정
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <mappers>
+    <mapper resource="TestMapper.xml"/>
+  </mappers>
+</configuration>
+```
+**mybatis-config.xml**  
+
+위의 코드를 작성해준다.  
+* resource는 앞으로 만들 mapper.xml파일의 이름이다.
+
+### 4. DTO 작성
 
 **데이터를 주고 받을때 사용하는 객체인 DTO를 만들어준다.**
 
@@ -137,7 +155,7 @@ public class portfolio {
 }
 ```
 
-### 4. mapper.xml 작성
+### 5. mapper.xml 작성
 
 **mapper.xml은 DB 쿼리문을 관리하며 DB와 상호작용하는 파일이다.**  
 쉽게말해 쿼리문을 모아둔 파일이다.
@@ -162,7 +180,7 @@ public class portfolio {
 - portfolio 테이블의 모든 정보를 select 하는 간단한 쿼리문을 작성한다.
 - mapper 태그의 namespace는 아직은 생성하지 않은 Mapper 인터페이스를 의미한다.
 
-### 5. Mapper Interface 작성
+### 6. Mapper Interface 작성
 
 ```java
 package com.example.demo.model.aws.dao;
@@ -181,7 +199,7 @@ public interface TestMapper {
 }
 ```
 
-### 6. Service class 작성
+### 7. Service class 작성
 
 **Service는 두가지를 구현해야한다.**
 
@@ -232,7 +250,7 @@ public class TestServiceImpl implements TestService {
 - **우리는 DAO를 사용하지않고 매퍼를 사용할 것이다.**
 - Service가 mapper를 호출하는 부분은 `return testMapper.getAllDataList();`이다.
 
-### 7. Controller 작성
+### 8. Controller 작성
 
 ```java
 package com.example.demo.controller;

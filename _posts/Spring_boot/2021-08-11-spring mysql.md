@@ -95,9 +95,9 @@ Spring boot 에서 중요한 개념인 **Controller, Service, DAO, Mapper에 대
 
 ```properties
 # database
-spring.datasource.url: jdbc:mysql://localhost:3306/tk_web?characterEncoding=utf8
+spring.datasource.url: jdbc:mysql://host:port/dbname?characterEncoding=utf8
 spring.datasource.username: root
-spring.datasource.password: george7790
+spring.datasource.password: password
 spring.datasource.driver-class-name: com.mysql.cj.jdbc.Driver
 
 # mybatis

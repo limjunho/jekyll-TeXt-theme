@@ -5,7 +5,7 @@ tags: Springboot JAVA
 
 ## Summry
 
-본 문서에서는 Spring Boot 프로젝트에서 MyBatis Framework를 이용한 MySQL 연동 방법을 정리한다.
+**본 문서에서는 Spring Boot 프로젝트에서 MyBatis Framework를 이용한 MySQL 연동 방법을 정리한다.**
 
 - 본 문서에서 제공하는 예시는 portfolio 테이블의 내용을 get request를 통해 확인해보는 코드이다.
 - 본 문서는 MySQL이 설치되어 있다고 가정하고 내용을 기술한다.
@@ -82,13 +82,14 @@ Spring boot 에서 중요한 개념인 **Controller, Service, DAO, Mapper에 대
 
 **본 문서에서 제공하는 예시의 패키지(디렉터리) 구조이다.**
 
-### 의존성 설정
+### 1. 의존성 설정
 
 - **build.gradle 파일에 위의 의존성을 작성한다.**
   - spring boot 프로젝트 생성 시 dependency에 mybatis framework를 추가했다면 따로 의존성을 추가할 필요는 없다.
   - 위의 방법이 아닌 경우 dependencies {...}에 `implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0` 를 추가하고 Refresh Gradle Project를 해준다.
+    - version은 각자 맞게,,
 
-### DB 연결 설정 및 mybatis 설정
+### 2. DB 연결 설정 및 mybatis 설정
 
 **application.priperties 파일을 열고 아래와 같이 설정 정보를 작성한다.**
 
@@ -105,7 +106,7 @@ mybatis.type-aliases-package: com.example.demo.model
 mybatis.mapper-locations: mybatis/mapper/*.xml
 ```
 
-### DTO 작성
+### 3. DTO 작성
 
 **데이터를 주고 받을때 사용하는 객체인 DTO를 만들어준다.**
 
@@ -136,7 +137,7 @@ public class portfolio {
 }
 ```
 
-### mapper.xml 작성
+### 4. mapper.xml 작성
 
 **mapper.xml은 DB 쿼리문을 관리하며 DB와 상호작용하는 파일이다.**  
 쉽게말해 쿼리문을 모아둔 파일이다.
@@ -161,7 +162,7 @@ public class portfolio {
 - portfolio 테이블의 모든 정보를 select 하는 간단한 쿼리문을 작성한다.
 - mapper 태그의 namespace는 아직은 생성하지 않은 Mapper 인터페이스를 의미한다.
 
-### Mapper Interface 작성
+### 5. Mapper Interface 작성
 
 ```java
 package com.example.demo.model.aws.dao;
@@ -180,7 +181,7 @@ public interface TestMapper {
 }
 ```
 
-### Service class 작성
+### 6. Service class 작성
 
 **Service는 두가지를 구현해야한다.**
 
@@ -231,7 +232,7 @@ public class TestServiceImpl implements TestService {
 - **우리는 DAO를 사용하지않고 매퍼를 사용할 것이다.**
 - Service가 mapper를 호출하는 부분은 `return testMapper.getAllDataList();`이다.
 
-### Controller 작성
+### 7. Controller 작성
 
 ```java
 package com.example.demo.controller;
@@ -265,6 +266,11 @@ public class TestController {
 ```
 
 **TestController.java**
+
+## 정리
+
+**위의 코드를 모두 작성하였다면 /test uri로 접근 시 portfolio 테이블의 모든 정보를 확인할 수 있을 것이다.**  
+
 
 ## Reference
 

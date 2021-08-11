@@ -107,7 +107,7 @@ mybatis.mapper-locations: mybatis/mapper/*.xml
 ```
 **mybatis.mapper-locations은 알맞게 설정해주어야 에러가 발생하지 않는다.**  
 
-### 3. mybatis config file 설정
+### 3. mybatis config file 작성
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>

@@ -1,6 +1,6 @@
 ---
 title: Spring boot Annotation
-tags: Springboot
+tags: Springboot JAVA
 ---
 
 ## Summry  

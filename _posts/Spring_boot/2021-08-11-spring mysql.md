@@ -1,6 +1,6 @@
 ---
 title: Spring boot mysql 연동(mybatis)
-tags: Springboot JAVA
+tags: Springboot
 ---
 
 ## Summry

@@ -33,7 +33,7 @@ Service라는 부모를 ServiceImpl이라는 자식이 상속받게 되는 것�
 
 이걸 Service와 ServiceImpl로 생각하면 KeyboardService라는 interface를 implement하는 AkeyboardServiceImpl과 BkeyboardServiceImpl class들이 “타자를 치는” 기능을 구현하는 것이다.  
 
-이렇게 역할과 구현으로 나누게 되면 역할 부분을 새로운 방식으로 구현해야 할 때 구현하는 부분만 손쉽게 바꿀 수 있다. 따라서 Service라는 interface를 만든 후 해당 역할을 구현하는 ServiceImpl class를 만드는 것이다.  
+**이렇게 역할과 구현으로 나누게 되면 역할 부분을 새로운 방식으로 구현해야 할 때 구현하는 부분만 손쉽게 바꿀 수 있다. 따라서 Service라는 interface를 만든 후 해당 역할을 구현하는 ServiceImpl class를 만드는 것이다.**  
 
 ## Reference
 

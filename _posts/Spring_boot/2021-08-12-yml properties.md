@@ -8,7 +8,7 @@ tags: Springboot
 본 문서에서는 yml을 properties와 비교정리한다.  
 
 **yml yaml?**  
-최근 스프링이나 쿠버네티스 같은 프로그램의 '설정 파일' 저장 양식으로 많이 쓰이는데, yaml파일의 확장자가 .yml이 된다.  
+* 최근 스프링이나 쿠버네티스 같은 프로그램의 '설정 파일' 저장 양식으로 많이 쓰이는데, yaml파일의 확장자가 .yml이 된다.  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
@@ -26,7 +26,7 @@ tags: Springboot
 
 ### 장점
 
-1. **가독성이 좋다**  
+**1. 가독성이 좋다**  
   * 계층구조로 표현하여 가독성이 좋다. 또한 불필요한 소스의 중복도 제거 할 수 있다.
   * 들여쓰기, 띄어쓰기로 구분하여 보기 편하다.  
 
@@ -49,7 +49,7 @@ spring:
       maximum-pool-size: 10
 ```
 
-2. **리스트 표현**  
+**2. 리스트 표현**  
   * 여러 줄에 쓸 때에는 하이픈(-)으로 시작하는 한 줄에 하나의 요소를 표현한다.
   * 한 줄에 모아 쓸 때에는 대괄호([])를 이용하며 쉼표로 각 요소를 구분한다.  
 
@@ -71,7 +71,7 @@ my:
   servers: [dev.example.com, another.example.com]
 ```
 
-3. **주석**  
+**3. 주석**  
 
 ```yaml
 spring:
@@ -84,13 +84,13 @@ spring:
       maximum-pool-size: 10
 ```
 
-4. **SpringBoot Profile 적용이 용이하다.**  
+**4. SpringBoot Profile 적용이 용이하다.**  
  * 한 파일 내에서 여러 파일을 사용하는 것처럼 분리가 가능하다.
  * application.yml 파일 하나로 여러개의 yml을 생성 한것과 같이 처리 가능
 
 ### 단점
 
-1. **@PropertySource 어노테이션으로 프로퍼티 값을 불러 올 수 없다.**  
+**1. @PropertySource 어노테이션으로 프로퍼티 값을 불러 올 수 없다.**  
   * 해당 어노테이션을 사용 하려면 프로퍼티 파일을 사용해야된다.  
 
 ### 기타

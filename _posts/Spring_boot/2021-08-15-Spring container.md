@@ -1,6 +1,6 @@
 ---
 title: Spring Container
-tags: Spring
+tags: Springboot
 ---
 
 ## Summry
@@ -29,6 +29,8 @@ public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") S
 ```
 
 **Container 가 개발자를 대신하여 메서드가 호출될 때와 메서드가 필요한 자원을 전달하는 설계 구조를 Inversion of Control (IOC) 이라 한다.**  
+* 제어의 역전(IOC : Inversion of Control)은  프로그램의 생명주기에 대한 제어권이 웹 애플리케이션 컨테이너에 있다.
+    * 즉, 사용자가 직접 new 연산자를 통해 인스턴스를 생성하고 메서드를 호출하는 일련의 생명주기에 대한 작업들을 스프링에 위임할 수 있다.
 * IOC 는 메서드가 필요로 하는 자원을 코드가 실행되는 타임에 전달하는데, 이를 Dependency Injection (DI) 이라 한다.  
     * 예를 들어 Container가 알아서 greeting 메서드가 필요로 하는 name 매개변수를 전달하는 과정과 run 메서드가 필요로 하는 RestTemplate 매개변수를 전달하는 과정 모두 Dependency Injection (DI) 이다.
 

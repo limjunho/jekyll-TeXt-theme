@@ -1,6 +1,6 @@
 ---
 title: Spring Bean
-tags: Spring
+tags: Springboot
 ---
 
 ## Summry

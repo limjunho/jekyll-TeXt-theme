@@ -75,17 +75,26 @@ Front Controller는 주로 서블릿 컨테이너의 제일 앞에서 서버로 
 
 ## Spring Boot 동작 순서
 
-Request -> DispatcherServlet -> HandlerMapping -> (Controller -> Service -> DAO -> DB -> DAO -> Service -> Controller) -> DispatcherServlet -> ViewResolver -> View -> DispatcherServlet -> Response  
+**동작 순서 정리**  
+1. Request
+2. DispatcherServlet
+3. HandlerMapping
+4. business logic(Controller -> Service -> DAO -> DB -> DAO -> Service -> Controller)
+5. DispatcherServlet
+6. ViewResolver
+7. View
+8. DispatcherServlet
+9. Response  
 
 ![그림1](/assets/Spring_boot/machanism/1.png)  
 > https://devpad.tistory.com/24
 
-1. 클라이언트가 Request 요청을 하면, DispatcherServlet이 요청을 가로챈다. 이때 DispatcherServlet이 모든 요청을 가로채는 건 아니고 web.xml에 등록된 내용만 가로챈다.  
+**1. 클라이언트가 Request 요청을 하면, DispatcherServlet이 요청을 가로챈다. 이때 DispatcherServlet이 모든 요청을 가로채는 건 아니고 web.xml에 등록된 내용만 가로챈다.**
     * 최초의 web.xml 에서는 \<url-pattern\>이 '/'와 같이 해당 애플리케이션의 모든 URL로 등록돼있기 때문에, 만약 *. do와 같이 특정 URL만 적용하고 싶다면 \<url-pattern\>의 내용을 바꿔주어 범위를 변경하면 된다.
-2. DispatcherServlet이 가로챈 요청을 HandlerMapping에게 보내 해당 요청을 처리할 수 있는 Controller를 찾는다.
-3. 실제 로직 처리 (Controller -> Service -> DAO -> DB -> DAO -> Service -> Controller)
-4. 로직 처리 후 ViewResolver를 통해 view 화면을 찾는다.
-5. 찾은 view 화면을 View에 보내면 이 결과를 다시 DispatcherServlet에 보내고, DispatcherServlet는 최종 클라이언트에게 전송한다.
+**2. DispatcherServlet이 가로챈 요청을 HandlerMapping에게 보내 해당 요청을 처리할 수 있는 Controller를 찾는다.**
+**3. 실제 로직 처리 (Controller -> Service -> DAO -> DB -> DAO -> Service -> Controller)**
+**4. 로직 처리 후 ViewResolver를 통해 view 화면을 찾는다.**
+**5. 찾은 view 화면을 View에 보내면 이 결과를 다시 DispatcherServlet에 보내고, DispatcherServlet는 최종 클라이언트에게 전송한다.**
 
 ## Reference
 

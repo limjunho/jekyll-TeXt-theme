@@ -15,7 +15,7 @@ tags: Spring
 
 ## Spring bean
 
-* Spring에서는 Spring IoC Container 라는 개념을 사용한다.  
+*** Spring에서는 Spring IoC Container 라는 개념을 사용한다.**  
 
 * Container는 인스턴스의 생명주기를 관리하며, 생성된 인스턴스들에게 추가적인 기능을 제공하도록 하는 것이다. 즉 Container는 개발자가 작성한 코드의 처리과정을 위임받은 독립적인 존재라고 생각하면 된다.  
 
@@ -24,14 +24,14 @@ tags: Spring
 
 **이때 Spring Container에서 생성되는 객체를 Bean이라고 한다.**  
 
-스프링 IoC가 관리하는 객체라함은 스프링에 의해 생성되고, 라이프 사이클을 수행하고, 의존성 주입이 일어나는 객체들을 말한다. 즉, 개발자가 관리하는 객체가 아닌 스프링에게 제어권을 넘긴 객체를 스프링에서 Bean이라고 부른다.  
+Spring IoC가 관리하는 객체라함은 스프링에 의해 생성되고, 라이프 사이클을 수행하고, 의존성 주입이 일어나는 객체들을 말한다. 즉, 개발자가 관리하는 객체가 아닌 스프링에게 제어권을 넘긴 객체를 스프링에서 Bean이라고 부른다.  
 
 ## Spring bean 등록
 
 spring bean을 IoC 컨테이너에 등록하는 방법은 크게 2가지로 나뉜다.
 
-1. Component Scan을 통한 등록 ( annotation을 이용한 방법 )
-2. 빈 설정파일에 직접 등록  
+**1. Component Scan을 통한 등록 ( annotation을 이용한 방법 )**
+**2. Bean 설정파일에 직접 등록**  
 
 ### Component Scanning
 
@@ -41,13 +41,12 @@ spring bean을 IoC 컨테이너에 등록하는 방법은 크게 2가지로 나�
 
 **Spring IoC Container가 IoC Container를 만들고 그 안에 Bean을 등록할때 사용하는 Interface들을 Life Cycle Callback이라고 부른다.**  
 Life Cycle Callback 중에는 @Component이 붙어있는 모든 Class의 Instance를 생성해 Bean으로 등록하는 작업을 수행하는 Annotation Processor가 등록 되어있다.  
-이때, @ComonentScan Annotation이 붙어있는 Class가 이에 해당한다.  
 
 ### Bean 설정파일에 직접 등록
 
 빈 설정파일은 XML과 자바 설정파일로 작성할 수 있는데 최근 추세는 자바 설정파일을 좀 더 많이 사용한다.  
 * 자바 설정파일은 자바 클래스를 생성해서 작성할 수 있으며 일반적으로 xxxxConfiguration와 같이 명명한다.  
-* 그리고 클래스에 @Configuration 애노테이션을 붙인다. 그 안에 @Bean 애노테이션을 사용해 직접 빈을 정의한다.
+* 그리고 클래스에 @Configuration dj노테이션을 붙인다. 그 안에 @Bean dj노테이션을 사용해 직접 빈을 정의한다.
 
 ```java
 @Configuration
@@ -59,10 +58,10 @@ public class SampleConfiguration {
 }
 ```
 **example**  
-sampleController()에서 리턴되는 객체가 IoC 컨테이너 안에 빈으로 등록된다.  
+sampleController()에서 리턴되는 객체가 IoC 컨테이너 안에 Bean으로 등록된다.  
 
-이렇게 빈을 직접 정의해서 등록하면 @Component 어노테이션을 붙이지 않아도 된다.  
-@Configuration 어노테이션을 보면 이 어노테이션도 @Component를 사용하기 때문에 @ComponentScan의 스캔 대상이 되고 그에 따라 빈 설정파일이 읽힐때 그 안에 정의한 빈들이 IoC 컨테이너에 등록되는 것이다.
+이렇게 Bean을 직접 정의해서 등록하면 @Component 어노테이션을 붙이지 않아도 된다.  
+@Configuration 어노테이션을 보면 이 어노테이션도 @Component를 사용하기 때문에 @ComponentScan의 스캔 대상이 되고 그에 따라 Bean 설정파일이 읽힐때 그 안에 정의한 Bean들이 IoC 컨테이너에 등록되는 것이다.
 
 ## JavaBean SpringBean
 

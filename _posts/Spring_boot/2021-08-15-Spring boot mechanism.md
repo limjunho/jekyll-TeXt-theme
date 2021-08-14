@@ -77,7 +77,7 @@ Front Controller는 주로 서블릿 컨테이너의 제일 앞에서 서버로 
 
 Request -> DispatcherServlet -> HandlerMapping -> (Controller -> Service -> DAO -> DB -> DAO -> Service -> Controller) -> DispatcherServlet -> ViewResolver -> View -> DispatcherServlet -> Response  
 
-![그림1](assets/Spring_boot/machanism/1.png)  
+![그림1](/assets/Spring_boot/machanism/1.png)  
 > https://devpad.tistory.com/24
 
 1. 클라이언트가 Request 요청을 하면, DispatcherServlet이 요청을 가로챈다. 이때 DispatcherServlet이 모든 요청을 가로채는 건 아니고 web.xml에 등록된 내용만 가로챈다.  

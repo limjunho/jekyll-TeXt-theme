@@ -15,7 +15,7 @@ tags: Spring
 
 ## Spring bean
 
-*** Spring에서는 Spring IoC Container 라는 개념을 사용한다.**  
+** Spring에서는 Spring IoC Container 라는 개념을 사용한다.**  
 
 * Container는 인스턴스의 생명주기를 관리하며, 생성된 인스턴스들에게 추가적인 기능을 제공하도록 하는 것이다. 즉 Container는 개발자가 작성한 코드의 처리과정을 위임받은 독립적인 존재라고 생각하면 된다.  
 

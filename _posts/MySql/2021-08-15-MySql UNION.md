@@ -20,6 +20,7 @@ tags: MySql
 * UNION은 합집합을 의미하며 사용하게되면 두개의 SELECT문을 서로 합친 결과를 출력합니다. (중복데이터는 한번만 조회)  
 
 **usertable1**  
+
 |idx|name|age|
 |---|----|---|
 |1|user1|20|
@@ -27,6 +28,7 @@ tags: MySql
 |3|user3|24|
 
 **usertable2**  
+
 |idx|name|age|
 |---|----|---|
 |1|user4|21|
@@ -35,20 +37,20 @@ tags: MySql
 
 위와 같은 데이터를 가진 테이블이 두 개 있을 때 두 테이블의 모든 이름을 조회하고 싶을 경우 아래처럼 쿼리문을 구성한다.  
 
-```mysql
-(SELECT name FROM usertable1) --첫번째 SELECT문
-UNION
-(SELECT name FROM usertable2) --두번째 SELECT문
+```bash
+mysql > (SELECT name FROM usertable1) --첫번째 SELECT문
+     -> UNION
+     -> (SELECT name FROM usertable2) --두번째 SELECT문
 ```
 
 **하나의 테이블에서도 SELECT문을 합칠 수 있다.**  
 
 usertable1에서 나이가 20살인 사람을 조회하고 동시에 가장 마지막 행을 조회하고 싶다면 아래와 같이 쿼리문을 구성한다.  
 
-```mysql
-(SELECT * FROM usertable1 WHERE age = 20)
-UNION
-(SELECT * FROM calendar ORDER BY idx DESC limit 1);
+```bash
+mysql > (SELECT * FROM usertable1 WHERE age = 20)
+     -> UNION
+     -> (SELECT * FROM calendar ORDER BY idx DESC limit 1);
 ```
 
 ### UNION ALL 
@@ -57,10 +59,10 @@ UNION
 
 * UNION 대신 UNION ALL 키워드를 사용한다.
 
-```mysql
-(SELECT name FROM usertable1) --첫번째 SELECT문
-UNION ALL
-(SELECT name FROM usertable2) --두번째 SELECT문
+```bash
+mysql > (SELECT name FROM usertable1) --첫번째 SELECT문
+     -> UNION ALL
+     -> (SELECT name FROM usertable2) --두번째 SELECT문
 ```
 **example**  
 

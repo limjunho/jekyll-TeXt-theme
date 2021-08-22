@@ -51,7 +51,6 @@ tags: C
 
 ### example code  
 
-[Github](https://github.com/limjunho/C/tree/master/shared_memory)  
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -87,7 +86,7 @@ int main(int argc, char *argv[]) {
     memcpy(shared_memory, argv[1], strlen(argv[1]));    // first parameter copy to shared_memory
 }
 ```
-**make_shared_memory.c**  
+**make_shared_memory.c** -> 공유 메모리 생성하며 파라미터로 전달받은 값을 메모리에 저장   
 
 ```c
 #include <sys/types.h>
@@ -120,4 +119,41 @@ void main(){
     exit(0);
 }
 ```
-**read_shared_memory.c**
+**read_shared_memory.c** -> 공유 메모리의 값을 읽음  
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+
+#define SIZE 100
+
+int main(){
+    int shmid;
+
+    key_t key = 123456;
+
+    char *shared_memory;
+
+    /* create shared_memory */
+    if((shmid = shmget(key, SIZE, IPC_CREAT | 0644)) < 0){
+        // failed create shared_memory
+        printf("failed create shared_memory\n");
+        exit(0);
+    }
+
+    /* delete shared_memory */
+    if((shmctl(shmid, IPC_RMID, 0) == -1)){
+        printf("failed delete shared_memory\n");
+        exit(0);
+    }else{
+        printf("success delete shared_memory\n");
+    }
+    
+    return 0;
+}
+```
+**clear_shared_memory.c** -> 공유 메모리 삭제  

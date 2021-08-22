@@ -33,7 +33,7 @@ key: page-about
 * **이름(영문) : Limjunho**  
 * **전공 : 사이버보안전공**
 * **Email : jewel7492@gmail.com**
-* **Github : [https://github.com/Limjunho]([https://github.com/Limjunho])**
+* **Github : [https://github.com/Limjunho]([https://github.com/limjunho])**
 
 ## Paper  
 * [`[임준호], 이영찬, 박지훈, 김대영. (2020). 신속한 대피를 위한 GPS, RSSI기반 지진 비상대피 안내 시스템. 한국정보과학회 학술발표논문집, (), 1342-1344.`](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09874770)
@@ -55,41 +55,8 @@ key: page-about
 </details>
 
 ## Project  
-<details>
-<summary>React를 활용한 Web Page 개발</summary>
-<div markdown="1">       
-<style>
-    *:focus { outline:none; }
-</style>
 
-업데이트예정
-
-</div>
-</details>
-
-<details>
-<summary>Node.js + Express Example Server</summary>
-<div markdown="1">       
-<style>
-    *:focus { outline:none; }
-</style>
-
-업데이트예정
-
-</div>
-</details>
-
-<details>
-<summary>read and write time check</summary>
-<div markdown="1">       
-<style>
-    *:focus { outline:none; }
-</style>
-
-업데이트예정
-
-</div>
-</details>
+업데이트 예정..
 
 ## Certificate  
 <details>

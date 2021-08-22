@@ -5,9 +5,6 @@ tags: React
 
 **React에서 kakaomap api를 사용해 지도를 띄우는 예제**
 
-[React_kakaomap](https://github.com/limjunho/React/tree/master/map_ex)  
-예제 소스코드(github)
-
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
 <!--more-->
@@ -100,7 +97,6 @@ function App() {
 
 export default App;
 ```
-
 **App.js**
 
 ### 실행결과

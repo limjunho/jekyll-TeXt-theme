@@ -142,4 +142,4 @@ useRef()로 ref객체를 생성한 뒤, 이 객체를 선택하고 싶은 DOM에
 **값을 입력하고 초기화 버튼을 누르면 값들이 초기화되며 username input에 포커스가 잡힌다.**  
 
 ### 컴포넌트 내의 변수  
-[Array Append Example](https://limjunho.github.io/2020/09/17/Array_Append_Example.html)에서 배열에 사용하는 고유 id값을 관리하는데 ref를 사용한다.  
+배열에 사용하는 고유 id값을 관리하는데 ref를 사용한다.  

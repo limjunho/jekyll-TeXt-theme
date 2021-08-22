@@ -12,9 +12,6 @@ tags: React
 push, splice, unshift, pop 같은 내장함수는 배열 자체를 직접 수정하게 되므로 적합하지 않다.  
 그 대신에, **기존의 배열에 기반하여 새 배열을 만들어내는 함수인 concat, slice, map, filter 같은 함수를 사용해야한다.**  
 
-[React Array Example코드](https://github.com/limjunho/React/tree/master/array_ex)  
-지금까지 배열 예제코드는 이 코드에 모두 적용(github)  
-
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
 <!--more-->

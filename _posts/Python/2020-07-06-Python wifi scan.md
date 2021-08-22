@@ -4,7 +4,7 @@ tags: Python
 ---
 
 Raspberry Pi 4에서 주변 AP의 정보를 수집하는 용도로 작성된 코드이다.  
-[Github](https://github.com/limjunho/Python/tree/master/wifi_scan)  
+[Github](https://github.com/limjunho/Python_WifiScan)  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

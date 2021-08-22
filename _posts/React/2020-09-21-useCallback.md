@@ -5,9 +5,6 @@ tags: React
 
 **특정 함수를 재사용하는 useCallback예제**
 
-[React Array Example코드](https://github.com/limjunho/React/tree/master/array_ex)  
-예제 소스코드(github)
-
 [useMemo Example](https://limjunho.github.io/2020/09/21/useMemo.html)는 특정 결과값을 재사용하는 반면, useCallback은 특정 함수를 새로 만들지 않고 재사용한다.
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.

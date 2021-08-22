@@ -57,7 +57,92 @@ Activity가 종료되는 경우는 여러가지 이유가 있는데 사용자가
 액티비티가 받는 가장 마지막 호출이다.  
 
 각 메소드들이 언제 호출되는지 확인하기 위해 Log와 Toast  message를 띄우는 예제  
-[LifeCycle 예제](https://github.com/limjunho/Android/tree/master/LifeCycle_ex) click this  
+
+```java
+package com.example.lifecycle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button button;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Log.i("lifecycle", "onCreate()");
+        Toast.makeText(this, "onCreate()", Toast.LENGTH_SHORT).show();
+
+        button = (Button) findViewById(R.id.button);    // Activity의 구성요소를 초기화 하는 코드
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Log.i("lifecycle", "onStart()");
+        Toast.makeText(this, "onStart()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Log.i("lifecycle", "onRestart()");
+        Toast.makeText(this, "onRestart()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.i("lifecycle", "onStop()");
+        Toast.makeText(this, "onStop()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.i("lifecycle", "onDestroy()");
+        Toast.makeText(this, "onDestroy()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.i("lifecycle", "onPause()");
+        Toast.makeText(this, "onPause()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {     // 사용자와 상호작용하는 코드 작성 ex) Touch event
+        super.onResume();
+
+        Log.i("lifecycle", "onResume()");
+        Toast.makeText(this, "onResume()", Toast.LENGTH_SHORT).show();
+
+        button.setOnClickListener(new View.OnClickListener() {  // button을 클릭하는 경우
+            @Override
+            public void onClick(View view) {
+                // 다음 화면으로 넘어가는 코드 구현
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+    }
+}
+```
+
 위의 그림을 보면서 뒤로가기, 홈버튼 등등 여러 동작을 수행해보면 이해하기 쉽다.  
 
 **화면의 가로방향 세로방향을 바꾸면 onDestroy가 호출되고 다시 onCreate가 호출된다.**  

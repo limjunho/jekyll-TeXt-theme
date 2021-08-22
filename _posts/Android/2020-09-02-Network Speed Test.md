@@ -6,7 +6,6 @@ tags: Android
 DownloadManager를 이용해 HTTP파일을 다운로드 받아 Kbps와 Mbps를 측정하는 예제  
 
 [DownloadManager정리글](https://limjunho.github.io/2020/09/02/DownloadManager.html)  
-[DownloadManager예제소스](https://github.com/limjunho/Android/tree/master/DownloadManager_ex)
 
  [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

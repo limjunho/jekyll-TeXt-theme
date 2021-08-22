@@ -5,9 +5,6 @@ tags: React
 
 **React Developer Tools로 리렌더링을 확인하는 예제**
 
-[React Array Example코드](https://github.com/limjunho/React/tree/master/array_ex)  
-예제 소스코드(github)
-
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
 <!--more-->

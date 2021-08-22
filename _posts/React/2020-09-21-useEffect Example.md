@@ -7,9 +7,6 @@ tags: React
 useEffect 라는 Hook 을 사용하여 컴포넌트가 마운트 됐을 때 (처음 나타났을 때), 언마운트 됐을 때 (사라질 때), 그리고 업데이트 될 때 (특정 props가 바뀔 때) 특정 작업을 처리 
 <br />
 
-[React Array Example코드](https://github.com/limjunho/React/tree/master/array_ex)  
-예제 소스코드(github)  
-
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.  
 
 <!--more-->

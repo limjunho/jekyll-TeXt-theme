@@ -15,9 +15,6 @@ push, splice, unshift, pop 같은 내장함수는 배열 자체를 직접 수정
 [Array Append Example](https://limjunho.github.io/2020/09/17/Array_Append_Example.html)  
 [Array Delete Example](https://limjunho.github.io/2020/09/21/Array_Delete_Example.html)
 
-[React Array Example코드](https://github.com/limjunho/React/tree/master/array_ex)  
-지금까지 배열 예제코드는 이 코드에 모두 적용(github)  
-
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
 <!--more-->

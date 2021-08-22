@@ -11,7 +11,23 @@ Python 코드상에서 DB에 접속하여 데이터를 삽입하는 예제
 
 ---
 
-[github](https://github.com/limjunho/Python/tree/master/mysql_insert) 소스코드.  
+```python
+import pymysql
+
+### Database connect ###
+conn = pymysql.connect(host='127.0.0.1', user='test', password='',
+        db='test_db', charset='utf8')
+### get Cursor ###
+curs = conn.cursor()
+### insert CONST_COMMAND ###
+sql = """insert into test_table(number, data1, data2, data3) values(%s, %s, %s, %s)"""
+
+curs.execute(sql, (3, 'g', 'h', 'i'))
+
+conn.commit()
+
+conn.close()
+```
 
 **MySql 사용 절차**  
 1\. PyMySql 모듈을 import한다.  

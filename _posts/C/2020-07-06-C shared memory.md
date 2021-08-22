@@ -52,6 +52,72 @@ tags: C
 ### example code  
 
 [Github](https://github.com/limjunho/C/tree/master/shared_memory)  
-make_shared_memory.c -> 공유 메모리 생성하며 파라미터로 전달받은 값을 메모리에 저장  
-read_shared_memory.c -> 공유 메모리의 값을 읽음  
-clear_shared_memory.c -> 공유 메모리 삭제  
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+
+#define SIZE 100
+
+int main(int argc, char *argv[]) {
+    int shmid;
+    
+    key_t key = 123456;
+
+    char *shared_memory;
+
+    /* shared_memory create */
+    if ((shmid = shmget(key, SIZE, IPC_CREAT | 0644)) < 0)
+    {   // failed create shared_memory
+        printf("error");
+        exit(1);
+    }
+    
+    /* add to segment to shared_memory */
+    if ((shared_memory = shmat(shmid, NULL, 0)) == (char *) - 1)
+    {   // failed add segment to shared_memory
+        printf("error");
+        exit(1);
+    }
+    
+    memset(shared_memory, 0, strlen(shared_memory));   // shared_memory reset
+    memcpy(shared_memory, argv[1], strlen(argv[1]));    // first parameter copy to shared_memory
+}
+```
+**make_shared_memory.c**  
+
+```c
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 100
+
+void main(){
+    int shmid;
+    key_t key = 123456;
+    char *shm, *s;
+    
+    /* connect shared_memory */
+    if((shmid = shmget(key, SIZE, 0644))<0){
+        perror("failed shmget");   // perror? - print error
+        exit(1);
+    }
+    
+    if((shm = shmat(shmid, NULL, 0))==(char*) -1){
+        perror("failed shmat");
+        exit(1);
+    }
+
+    s=shm;
+    printf("%s\n",s);
+
+    exit(0);
+}
+```
+**read_shared_memory.c**

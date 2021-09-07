@@ -1,5 +1,5 @@
 ---
-title: spring boot cors 처리
+title: spring boot CORS 처리
 tags: Springboot
 ---
 

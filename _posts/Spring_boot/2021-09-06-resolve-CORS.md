@@ -43,16 +43,17 @@ public class WebConfig implements WebMvcConfigurer {
     }
 }
 ```
+**위의 코드는 모든 Origins에 대한 모든 HTTP 요청을 허용한다.**  
 
-* @Configuration Annotation을 통해 설정파일임을 명시
-* WebMvcConfigurer를 implements
+* **@Configuration Annotation을 통해 설정파일임을 명시**
+* **WebMvcConfigurer를 implements**
     * WebMvcConfigurer 인터페이스는 @EnableWebMvc를 통해 자동 설정되는 빈들의 설정자
-* addCorsMappings메소드를 오버라이드
-* registry.addMapping을 이용해서 CORS를 적용할 URL패턴을 정의할 수 있다.
-* allowedOrigins
+* **addCorsMappings메소드를 오버라이드**
+* **registry.addMapping을 이용해서 CORS를 적용할 URL패턴을 정의할 수 있다.**
+* **allowedOrigins**
     * 자원 공유를 허락할 Origin을 지정
     * 한번에 여러 Origin을 설정할 수 있다.
-* allowedMethods
+* **allowedMethods**
     * 허용할 HTTP method를 지정
     * 마찬가지로 여러개를 지정할 수 있다.
 

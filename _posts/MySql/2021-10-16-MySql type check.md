@@ -5,7 +5,7 @@ tags: MySql
 
 ## Summry
 
-본 문서에서는 테이블을 만들고 나서 컬럼의 타입을 확인하고자 할 때 사용할 방법들을 정리한다.  
+본 문서에서는 테이블을 만들고 나서 칼럼의 타입을 확인하고자 할 때 사용할 방법들을 정리한다.  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

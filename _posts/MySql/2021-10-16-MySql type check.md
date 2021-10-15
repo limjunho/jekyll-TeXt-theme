@@ -1,6 +1,6 @@
 ---
-title: Node.js MySql DATETIME 연동
-tags: Node.js
+title: MySql column의 type check 방법
+tags: MySql
 ---
 
 ## Summry

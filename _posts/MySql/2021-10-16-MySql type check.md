@@ -5,7 +5,7 @@ tags: MySql
 
 ## Summry
 
-본 문서에서는 DB의 DATETIME값을 출력하거나 렌더링할 때 ```Mon Feb 24 2020 15:15:53 GMT+0900 (GMT+09:00)```같은 모양을 DB 원본 그대로 ```2020-02-24 15:15:53``` 처럼 바꾸는 방법을 정리한다.  
+본 문서에서는 테이블을 만들고 나서 컬럼의 타입을 확인하고자 할 때 사용할 방법들을 정리한다.  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

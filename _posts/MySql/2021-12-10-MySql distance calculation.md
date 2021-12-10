@@ -29,4 +29,4 @@ SELECT *,
 
 ## Reference
 
-> [[MySQL] 위도 경도 값으로 반경(거리) 구하기](https://pnot.tistory.com/8)  
+> [[MySQL] 위도 경도 값으로 반경(거리) 구하기 - 저람](https://pnot.tistory.com/8)  

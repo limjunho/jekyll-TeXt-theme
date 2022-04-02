@@ -5,7 +5,7 @@ tags: MySql
 
 ## Summry
 
-본 문서에서는 AUTO_INCREMENT의 다음 등록 값을 확인하는 방법을 정리한다.  
+본 문서에서는 query 결과에 다시 query하는 방법을 정리한다.  
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

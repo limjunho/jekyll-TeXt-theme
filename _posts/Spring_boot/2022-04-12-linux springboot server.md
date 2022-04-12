@@ -1,6 +1,6 @@
 ---
 title: Ubuntu Springboot build & start
-tags: MySql Springboot
+tags: Linux Springboot
 ---
 
 ## Summry

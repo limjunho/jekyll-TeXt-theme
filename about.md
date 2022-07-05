@@ -53,7 +53,7 @@ key: page-about
 
 ## Career.
 
-<img align="left" src="assets/about/Career.png">
+<img align="left" width="300" src="assets/about/Career1.png">
 ● 외주 미팅 & 개발
 
 ● 요구사항 정리 및 피드백
@@ -63,6 +63,15 @@ key: page-about
 ● SQL & REST API 개발
 
 ● AWS 서버 운영
+
+---
+
+<img align="left" width="300" src="assets/about/Career2.png">
+● 
+
+<br>
+<br>
+<br>
 
 ---
 

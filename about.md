@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: 임준호 | 소통하는 개발자
 layout: article
 titles: 
   # @start locale config
@@ -26,8 +26,6 @@ titles:
   # @end locale config
 key: page-about
 ---
-
-# 임준호 | 소통하는 개발자
 
 소통과 협업을 중시하며, 이것이 업무 효율성 증대 및 팀의 성장에 영향을 가져온다고 믿습니다.  
 창업팀에서 외주 및 여러 활동을 수행하며 타 직종 대표님이나 박사분들과 소통해왔고 스스로도 소통하기 편한 사람이 되기 위해 노력하고 있습니다.  

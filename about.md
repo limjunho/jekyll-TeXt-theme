@@ -28,10 +28,10 @@ key: page-about
 ---
 
 소통과 협업을 중시하며, 이것이 업무 효율성 증대 및 팀의 성장에 영향을 가져온다고 믿습니다.  
-창업팀에서 외주 및 여러 활동을 수행하며 타 직종 대표님이나 박사분들과 소통해왔고 스스로도 소통하기 편한 사람이 되기 위해 노력하고 있습니다.  
-좋은 팀 문화를 만들어 나가는 것에 관심이 많습니다. 팀원들과 후배들에게 정보를 공유하기 위해 블로그 및 노션을 적극 활용하고 있으며, 특히 협업을 중시해 개발산출물을 잘 관리하는것에도 관심이 많습니다.
+**창업팀에서 외주 및 여러 활동을 수행하며 타 직종 대표님이나 박사분들과 소통**해왔고 스스로도 소통하기 편한 사람이 되기 위해 노력하고 있습니다.  
+**좋은 팀 문화**를 만들어 나가는 것에 관심이 많습니다. 팀원들과 후배들에게 정보를 공유하기 위해 블로그 및 노션을 적극 활용하고 있으며, 특히 협업을 중시해 개발산출물을 잘 관리하는것에도 관심이 많습니다.
 
-## Personal Information.  
+## <span style = "color : #337EA9">Personal Information. </span>
 
 * **이름 : 임준호**
 * **이름(영문) : Limjunho**  
@@ -40,7 +40,7 @@ key: page-about
 * **Github : [https://github.com/limjunho](https://github.com/limjunho)**
 
 
-## Skill.
+## <span style = "color : #337EA9">Skill.</span>
 
 * Language : Java, SQL
 * Back-End : Spring, RESTful API
@@ -49,7 +49,7 @@ key: page-about
 * Soft-skill : Agile, XP, Waterfall
 
 
-## Career.
+## <span style = "color : #337EA9">Career.</span>
 
 ![career1](assets/about/Career1.png)  
 
@@ -63,7 +63,7 @@ key: page-about
 
 ---
 
-## 논문
+## <span style = "color : #337EA9">논문.</span>
 * [`[임준호], 이영찬, 박지훈, 김대영. (2020). 신속한 대피를 위한 GPS, RSSI기반 지진 비상대피 안내 시스템. 한국정보과학회 학술발표논문집, (), 1342-1344.`](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09874770)
 * `장재원, 이소연, 양희웅, [임준호], 이영찬, 김대영*. (2020). 딥러닝 모델을 이용한 실시간 미아 찾기 시스템. 한국인터넷정보학회 추계학술대회 논문집 제 21권2호.`
 * [`김지원, [임준호], 이소연, 이영찬, 김대영. (2021). 효율적인 제설작업을 위한 제설 우선순위 결정 시스템. 한국통신학회 학술대회논문집, (), 929-930.`](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10547839)
@@ -72,7 +72,7 @@ key: page-about
 * `[임준호], 이영찬, 양희웅, 장재원, 김대영*. (2021). 신속한 소방작전 설계를 위한 화재정보 수집 시스템. ICT플랫폼학회 추계학술대회`
 * `[임준호], 장재원, 양희웅, 전용준*. (2022). 화재 이미지 알람 시스템 설계 및 구현. 한국정보처리학회 ASK 2022 (춘계학술대회)`
 
-## 수상 
+## <span style = "color : #337EA9">수상.</span>
 <details>
 <summary>대구·경북 아이디어톤(2020) - SW 설계 부문 최우수상</summary>
 <div markdown="1">       
@@ -121,7 +121,7 @@ key: page-about
 </div>
 </details>
 
-## 자격증
+## <span style = "color : #337EA9">자격증.</span>
 <details>
 <summary>리눅스마스터 2급</summary>
 <div markdown="1">       

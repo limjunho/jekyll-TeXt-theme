@@ -41,7 +41,6 @@ key: page-about
 * **Email : jewel7492@gmail.com**
 * **Github : [https://github.com/limjunho](https://github.com/limjunho)**
 
----
 
 ## Skill.
 
@@ -51,12 +50,12 @@ key: page-about
 * Database : MySQL
 * Soft-skill : Agile, XP, Waterfall
 
----
 
 ## Career.
 
 <img align="left" src="assets/about/Career.png">
 ● 외주 미팅 & 개발
+
 ● 요구사항 정리 및 피드백
 
 ● 팀 내의 기술부채를 문서 또는 블로그에 정리

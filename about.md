@@ -43,11 +43,20 @@ key: page-about
 
 ---
 
+## Skill.
+
+* Language : Java, SQL
+* Back-End : Spring, RESTful API
+* DevOps : AWS
+* Database : MySQL
+* Soft-skill : Agile, XP, Waterfall
+
+---
+
 ## Career.
 
 <img align="left" src="assets/about/Career.png">
 ● 외주 미팅 & 개발
-
 ● 요구사항 정리 및 피드백
 
 ● 팀 내의 기술부채를 문서 또는 블로그에 정리
@@ -56,6 +65,7 @@ key: page-about
 
 ● AWS 서버 운영
 
+---
 
 ## 논문
 * [`[임준호], 이영찬, 박지훈, 김대영. (2020). 신속한 대피를 위한 GPS, RSSI기반 지진 비상대피 안내 시스템. 한국정보과학회 학술발표논문집, (), 1342-1344.`](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09874770)

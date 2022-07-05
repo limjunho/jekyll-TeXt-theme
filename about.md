@@ -1,5 +1,5 @@
 ---
-title: About
+title: About Me
 layout: article
 titles: 
   # @start locale config
@@ -53,25 +53,15 @@ key: page-about
 
 ## Career.
 
-<img align="left" width="300" src="assets/about/Career1.png">
-● 외주 미팅 & 개발
+![career1](assets/about/Career1.png)  
 
-● 요구사항 정리 및 피드백
+* 외주 미팅 & 개발
+* 요구사항 정리 및 피드백
+* 팀 내의 기술부채를 문서 또는 블로그에 정리
+* SQL & REST API 개발
+* AWS 서버 운영
 
-● 팀 내의 기술부채를 문서 또는 블로그에 정리
-
-● SQL & REST API 개발
-
-● AWS 서버 운영
-
----
-
-<img align="left" width="300" src="assets/about/Career2.png">
-● 
-
-<br>
-<br>
-<br>
+![career2](assets/about/Career2.png)  
 
 ---
 

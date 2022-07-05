@@ -52,7 +52,7 @@ key: page-about
     *:focus { outline:none; }
 </style>
 
-![image1](/assets/about/대경권아이디어톤상장.png)  
+![상장1](/assets/about/대경권아이디어톤상장.png)  
 
 </div>
 </details>
@@ -64,7 +64,7 @@ key: page-about
     *:focus { outline:none; }
 </style>
 
-![image2](/assets/about/우수논문상장.jpg)  
+![상장2](/assets/about/우수논문상장.jpg)  
 
 </div>
 </details>
@@ -76,7 +76,19 @@ key: page-about
     *:focus { outline:none; }
 </style>
 
-![image2](/assets/about/경북테크노파크상장.jpg)  
+![상장3](/assets/about/경북테크노파크상장.jpg)  
+
+</div>
+</details>
+
+<details>
+<summary>[대구가톨릭대학교] 캡스톤 디자인 EXPO(2022) - 장려상</summary>
+<div markdown="1">       
+<style>
+    *:focus { outline:none; }
+</style>
+
+![상장4](/assets/about/캡스톤디자인EXPO상장(임웅장).jpg)  
 
 </div>
 </details>

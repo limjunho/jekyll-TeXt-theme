@@ -45,9 +45,16 @@ key: page-about
 
 ## Career.
 
-![test](/assets/about/Career.png){: .img-left}
+<img align="left" src="assets/about/Career.png">
+● 외주 미팅 & 개발
 
-ㅇㅇ
+● 요구사항 정리 및 피드백
+
+● 팀 내의 기술부채를 문서 또는 블로그에 정리
+
+● SQL & REST API 개발
+
+● AWS 서버 운영
 
 
 ## 논문

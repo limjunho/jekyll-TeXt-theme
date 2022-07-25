@@ -26,7 +26,7 @@ FROM 테이블명;
 ```
 
 * **초기화 구문을 넣지않고 @rownum:=@rownum+1 만으로 데이터를 조회하게 된다면, <span style = "color : red">조회할 때마다 rownum값이 매번 바뀌게 된다.</span>**
-## 
+
 
 ## WHERE절에서 초기화
 
@@ -41,12 +41,14 @@ WHERE (@rownum:=0)=0;
 ## join + rownum 사용 예제
 
 **table1**  
+
 |table1_index|column1|
 |------------|-------|
 |1|A1|
 |2|A2|
 
 **table2**  
+
 |table2_index|column2|
 |------------|-------|
 |1|B1|

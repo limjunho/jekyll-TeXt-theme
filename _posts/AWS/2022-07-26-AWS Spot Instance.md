@@ -17,7 +17,7 @@ tags: AWS
 
 ## 원리
 
-![그림1](/assets/AWS/Spot_instance/1.png)  
+![그림1](/assets/AWS/Spot_Instance/1.png)  
 
 **스팟 인스턴스는 사용자 제시 가격(입찰가격)을 정해놓고 저렴할 때 이용할 수 있다.**
 

@@ -5,7 +5,7 @@ tags: Springboot etc
 
 ## Summry
 
-본 문서에서 REST API 테스트 가이드를 정리한다.
+본 문서에서는 REST API 테스트 가이드를 정리한다.
 
 POSTMAN, SWAGGER 등 다양한 툴을 이용하여 테스트 자동화를 수행하는것을 추천한다.  
 

@@ -106,6 +106,26 @@ public class exceptionHandler {
 json으로 return하기 위해 @RestControllerAdvice를 사용했으며 위와 같은 방식으로 메시지를 예외사항에 맞게 재정의해준다.  
 **서버는 잘못된 요청으로 인해 400을 반환하는 경우에도 단순히 에러 메시지로 BadRequest를 반환하는것이 아닌 자세한 에러 사유를 반환하는것이 좋다.** 따라서 JAVA의 표준 예외를 활용해 예외의 발생 원인을 에러메시지로 재정의한다.  
 
+표준 Exception을 재정의하면 따로 try/catch로 exception을 throws 해주지 않아도 알아서 재정의한 메시지를 반환한다.
+
+```java
+@Operation(summary = "test API")
+  @GetMapping("/test")
+  public List<test_DTO> getTest(@RequestParam Integer test, HttpServletResponse res) throws customException{
+    List<test_DTO> result = testService.getTest(test);
+    
+    if (!result.isEmpty()) {
+      res.setStatus(StatusCode.OK);
+      return result;
+    } else {
+      res.setStatus(StatusCode.NoContent);
+      return null;
+    }
+  }
+```
+
+controller에서는 반환할 데이터들의 empty 여부만 체크해 200 또는 204를 반환한다.  
+
 ### Controller 내의 ExceptionHandler
 
 ```java
@@ -167,4 +187,4 @@ public class HelloController {
 
 ## Reference
 
-> [스프링 부트에서의 예외 처리 (Exception) | @ControllerAdvice, @ExceptionHandler [스프링 부트 (Spring Boot) - 어라운드허브 스튜디오]](https://www.youtube.com/watch?v=nyN4o9eXqm0&list=LL&index=4&t=562s&ab_channel=%EC%96%B4%EB%9D%BC%EC%9A%B4%EB%93%9C%ED%97%88%EB%B8%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-AroundHubStudio)  
+> [스프링 부트에서의 예외 처리 (Exception) @ControllerAdvice, @ExceptionHandler [스프링 부트 (Spring Boot) - 어라운드허브 스튜디오]](https://www.youtube.com/watch?v=nyN4o9eXqm0&list=LL&index=4&t=562s&ab_channel=%EC%96%B4%EB%9D%BC%EC%9A%B4%EB%93%9C%ED%97%88%EB%B8%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-AroundHubStudio)  

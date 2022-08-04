@@ -59,8 +59,6 @@ key: page-about
 * SQL & REST API 개발
 * AWS 서버 운영
 
-![career2](assets/about/Career2.png)  
-
 ---
 
 ## <span style = "color : #337EA9">논문.</span>

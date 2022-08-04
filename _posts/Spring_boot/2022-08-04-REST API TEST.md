@@ -1,6 +1,6 @@
 ---
 title: REST API 테스트 가이드
-tags: JAVA etc
+tags: Springboot etc
 ---
 
 ## Summry
@@ -47,7 +47,8 @@ API의 오픈 정도, 대상, 중요도에 따라서 테스트 설계 수준을 
 **스펙에 정의된 각 응답 코드가 발생하는 입력 값과 상황을 설정하여 테스트를 수행한다.**  
 **하나의 응답코드가 여러 상황에 따라 발생할 수 있는 경우 테스트 케이스를 추가한다.**  
 
-> **400 error test case example**
+> **400 error test case example**  
+
 1. **필수입력 파라미터가 누락되었는가.**
     * ex) 게시글 작성 API의 경우 게시글 제목을 입력하지 않은 경우 400 return
 2. **파라미터 경계값 분석**

@@ -9,6 +9,9 @@ Backend 개발자에게는 클라이언트에게 500Error를 보여주지 않을
 
 본 문서에서 JAVA의 표준 예외를 이용해 Exception을 처리하는 방법을 정리한다.
 
+[Java Checked, Unchecked Exception 정리](https://limjunho.github.io/2022/08/04/JAVA-Exception.html)   
+
+
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 
 <!--more-->

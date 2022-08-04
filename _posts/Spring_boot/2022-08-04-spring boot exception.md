@@ -188,3 +188,4 @@ public class HelloController {
 ## Reference
 
 > [스프링 부트에서의 예외 처리 (Exception) @ControllerAdvice, @ExceptionHandler [스프링 부트 (Spring Boot) - 어라운드허브 스튜디오]](https://www.youtube.com/watch?v=nyN4o9eXqm0&list=LL&index=4&t=562s&ab_channel=%EC%96%B4%EB%9D%BC%EC%9A%B4%EB%93%9C%ED%97%88%EB%B8%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-AroundHubStudio)  
+> [[스프링 프레임워크] 예외 처리하기 - 김현호](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=kimnx9006&logNo=220625947148)

@@ -137,8 +137,13 @@ tags: AWS(Cloud_Foundations)
 
 ![그림4](/assets/AWS/Cloud_Foundations6/4.png)
 
+</br>
+
 - **Amazon EC2 요금 모델 : 이점**
   ![그림5](/assets/AWS/Cloud_Foundations6/5.png)
+
+</br>
+
 - **Amazon EC2 요금 모델 : 사용 사례**
   ![그림6](/assets/AWS/Cloud_Foundations6/6.png)
 
@@ -174,17 +179,18 @@ tags: AWS(Cloud_Foundations)
 
 ## Container Service
 
-- 컨테이너는 운영 체제를 가상화하는 방식 중 하나
-- 컨테이너 이점
+- 컨테이너는 운영 체제를 가상화하는 방식 중 하나이다.
+
+- **컨테이너 이점**
   1. 반복 가능
   2. 독립형 실행 환경
   3. 소프트웨어가 서로 다른 환경에서 동일하게 실행됨
      - 개발자의 랩탑, 테스트, 프로덕션 등
   4. 가상 머신보다 빠르게 시작하거나 중지, 종료할 수 있음
-- 컨테이너와 가상 머신의 차이
+- **컨테이너와 가상 머신의 차이**
   ![그림11](/assets/AWS/Cloud_Foundations6/11.png)
   - 하이퍼바이저에서 직접 실행되는 가상 머신과 달리 컨테이너는 Docker 호스트 소프트웨어와 사전 요구 사항을 지원하는 적절한 커널 기능이 있는 모든 운영 체제에서 실행됨
-- Amazon Elastic Container Service(Amazon ECS)
+- **Amazon Elastic Container Service(Amazon ECS)**
   - Docker container의 실행을 오케스트레이션하는 확장 가능한 고성능 컨테이너 관리 서비스
   - Amazon ECS 클러스터 옵션
     ![그림12](/assets/AWS/Cloud_Foundations6/12.png)
@@ -203,10 +209,11 @@ tags: AWS(Cloud_Foundations)
 
 ## AWS Lambda
 
-- 서버를 프로비저닝하거나 관리할 필요 없이 코드를 실행할 수 있는 서버리스 컴퓨팅 서비스
+- **서버를 프로비저닝하거나 관리할 필요 없이 코드를 실행할 수 있는 서버리스 컴퓨팅 서비스**
+
 - 코드는 트리거된 경우에만 실행되며 사용한 컴퓨팅 시간(100 밀리초 단위로 측정)에 대해서만 비용을 지불함
 - Lambda는 함수가 처리하는 모든 요청을 자동으로 기록
-- AWS Lambda 함수 구성
+- **AWS Lambda 함수 구성**
   1. 함수 이름 지정
   2. 런타임 환경 지정
      - Python이나 Node.js 등 선택
@@ -227,13 +234,13 @@ tags: AWS(Cloud_Foundations)
 
 ## AWS Elastic Beanstalk
 
-- Web Application을 쉽게 시작 및 실행할 수 있는 방법
+- **Web Application을 쉽게 시작 및 실행할 수 있는 방법**
   - 서버, 데이터베이스, 로드 밸런서, 방화벽, 네트워크를 구성 및 관리하는데 시간을 쓰지 않고 코드만 작성하면 됨
-- 다음을 자동으로 처리하는 관리형 서비스
+- **다음을 자동으로 처리하는 관리형 서비스**
   - 인프라 프로비저닝 및 구성
   - 배포
   - 로드 밸런싱
-  - 자동 조정
+  - 자동 조정(Auto Scaling)
     - 이 설정을 사용하여 Application의 특정 요구 사항에 따라 Application을 자동으로 확장 및 축소할 수 있음
     - CPU 사용률 지표를 사용하여 자동 조정 작업을 트리거할 수도 있음
   - 상태 모니터링

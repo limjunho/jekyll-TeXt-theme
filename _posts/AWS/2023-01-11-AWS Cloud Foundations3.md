@@ -19,7 +19,7 @@ tags: AWS(Cloud_Foundations)
 - region간 통신에는 AWS backbone network infrastructure가 사용되며 각 AWS region은 완전한 이중화 및 네트워크 연결을 제공
 - region은 일반적으로 2개 이상의 가용 영역으로 구성됨
 - 하나의 region에서의 데이터 복제는 aws에서 지원하나 aws region 간의 데이터 복제는 고객이 제어
-- region 을 선택할 때 고려할 것
+- **region 을 선택할 때 고려할 것**
   1. data governance, 법적 요구사항
   2. 고객에 대한 근접성(지연 시간)
      1. 사용자의 위치와 region의 지연성을 테스트 하려면 Cloude Ping과 같은 곳에서 테스트 가능
@@ -115,7 +115,7 @@ tags: AWS(Cloud_Foundations)
   - **AWS 비용 및 사용 보고서**
     - 보고서에는 AWS service 요금 및 예약에 대한 추가 메타데이터를 비롯하여 사용 가능한 가장 포괄적인 AWS 비용 및 사용량 데이터 세트가 포함됨
   - **AWS 예산**
-    - AWS 비용 또는 상죵량이 예산 금액을 초과하거나 초과할 것으로 예상될 때 알려주는 사용자 지정 예산을 설정할 수 있음
+    - AWS 비용 또는 사용량이 예산 금액을 초과하거나 초과할 것으로 예상될 때 알려주는 사용자 지정 예산을 설정할 수 있음
   - **AWS Cost Explorer**
     - 사용이 쉬운 인터페이스를 통해 시간 경과에 따른 AWS 비용 및 사용량을 시각화하여 파악 및 관리할 수 있다.
 

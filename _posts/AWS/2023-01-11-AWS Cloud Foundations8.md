@@ -14,7 +14,7 @@ tags: AWS(Cloud_Foundations)
 
 ---
 
-### Amazon Relational Database Service
+## Amazon Relational Database Service
 
 - **직접 관리형 데이터베이스의 문제점**  
   ![그림1](/assets/AWS/Cloud_Foundations8/1.png)
@@ -38,27 +38,29 @@ tags: AWS(Cloud_Foundations)
 
 ---
 
-### Amazon DynamoDB
+## Amazon DynamoDB
 
 - **Amazon DynamoDB는 규모에 관계없이 10밀리초 미만의 일관된 지연 시간이 요구되는 모든 애플리케이션을 위한 빠르고 유연한 NoSQL 데이터베이스 서비스이다.**
   ![그림6](/assets/AWS/Cloud_Foundations8/6.png)
-- 관계형 데이터베이스와 비관계형 데이터베이스의 비교
+
+- **관계형 데이터베이스와 비관계형 데이터베이스의 비교**
   ![그림7](/assets/AWS/Cloud_Foundations8/7.png)
 
 ---
 
-### Amazon Redshift
+## Amazon Redshift
 
 - **표준 SQL과 기존 비즈니스 인텔리전스 도구를 사용하여 모든 데이터를 간편하고 비용 효율적으로 분석할 수 있는 완전관리형의 고속 데이터 웨어하우스이다.**
   - 정교한 쿼리 최적화, 고성능 로컬 디스크의 열 형식 스토리지 대량 병렬 쿼리 실행 기능을 사용하여 페타바이트 규모의 정형 데이터에 복잡한 분석 쿼리를 실행할 수 있다. 대부분의 결과는 몇 초 내에 반환된다.
 - 자동화 및 조정 기능을 포함하고 있으며 저장된 데이터와 전송 중인 데이터에 대해 강력한 암호화를 제공하도록 설계되었다.
-- Amazon Redshift 사용 사례
+
+- Amazon Redshift 사용 사례  
   ![그림8](/assets/AWS/Cloud_Foundations8/8.png)
   ![그림9](/assets/AWS/Cloud_Foundations8/9.png)
 
 ---
 
-### Amazon Aurora
+## Amazon Aurora
 
 - **MySQL 및 PostgreSQL과 호환되는 관계형 데이터베이스로, 고성능 상용 데이터베이스의 속도와 가용성에 오픈 소스 데이터베이스의 간편함과 비용 효율성을 결합했다.**
   - 완전관리형 서비스로 프로비저닝 패치 적용, 백업, 복구, 장애 탐지, 복원 등 시간이 많이 소요되는 작업을 자동화하도록 설계되었다.

@@ -1,5 +1,5 @@
 ---
-title: AWS Spot Instance
+title: AWS 글로벌 인프라 개요, AWS 서비스 소개
 tags: AWS
 ---
 
@@ -32,8 +32,8 @@ tags: AWS
 
 - 다양한 서비스가 있으나 이번 강의에서는 많이 사용되는 서비스를 특정하여 소개함
 
-- Storage Service
   ### Storage Service
+
   - **AWS Simple Storage Service(S3)**
   - **Amazon Elastic Block Store(EBS)**
     - 높은 처리량이 요구되는 트랜잭션 집약적 workload에 EC2와 함께 사용될 수 있도록 설계된 고성능 블록 스토리지이다.
@@ -41,8 +41,9 @@ tags: AWS
     - AWS cloud service 및 on-premise 리소스 내에서 사용할 수 있는 확장 가능하고 탄력적인 완전관리형 Network File System(NFS)을 제공한다.
   - **Amazon Simple Strorage Services Glacier**
     - 데이터 아카이빙 및 장기 백업을 위한 안전하고 내구성이 높으며 비용이 매우 저렴한 AWS S3 cloud 스토리지 클래스이다.
-- Computing Service
+
   ### Computing service
+
   - **Amazon Elastic Compute Cloud(EC2)**
     - 크기 조정이 가능한 컴퓨팅 용량을 cloud의 가상 머신으로 제공
   - **Amazon EC2 Auto Scaling**
@@ -59,8 +60,9 @@ tags: AWS
     - AWS에서 Kubernetes를 사용하는 container식 application을 손쉽게 배포하고 관리 및 확장할 수 있다.
   - **AWS Fargate**
     - 서버 또는 클러스터를 관리할 필요 없이 container를 실행할 수 있는 Amazon ECS용 컴퓨팅 엔진이다.
-- Database Service
+
   ### Database Service
+
   - **Amazon Relational Database Service(RDS)**
     - cloud에 간편하게 설정할 수 있고 확장 가능한 관계형 database
     - 크기 조정이 가능한 용량을 제공하며 하드웨어 provisioning, database 설정 패치 적용, 백업과 같은 시간 소모적인 관리 작업을 자동화
@@ -72,8 +74,9 @@ tags: AWS
     - 이 service는 모든 규모에서 빠른 성능을 제공한다.
   - **Amazon DynamoDB**
     - 내장된 보안, 백업 및 복원, 인 메모리 캐싱을 통해 모든 규모에서 10밀리초 미만의 성능을 제공하는 완전관리형 key-value NoSQL DB이다.
-- Networking & Content Delivery Network(CDN)
-  ### Networking & 콘텐츠 전송 서비스
+
+  ### Networking & Content Delivery Network(CDN)
+
   - **Amazon Virtual Private Cloude(VPC)**
     - AWS cloud의 논리적으로 격리된 섹션을 provisioning하여 정의된 가상 네트워크에서 AWS 리소스를 시작할 수 있다.
   - **Elastic Load Balancing(ELB)**
@@ -90,8 +93,9 @@ tags: AWS
     - 데이터 센터 또는 사무실에서 AWS로 연결되는 전용 private 네트워크 연결을 설정하는 기능을 제공하므로 비용을 대폭 줄이고 대역폭 처리량을 늘릴 수 있다.
   - **AWS VPN**
     - 네트워크 또는 디바이스에서 AWS 글로벌 네트워크로 연결되는 보안 private tunnel을 제공
-- 보안, 자격 증명 및 규정 준수 서비스
+
   ### 보안, 자격 증명 및 규정 준수 서비스
+
   - **AWS Identify and Access Management(IAM)**
     - 리소스에 대한 엑세스를 안전하게 관리
   - **AWS Organizations**
@@ -104,16 +108,18 @@ tags: AWS
     - 암호화 키를 생성 및 관리할 수 있음.
   - **AWS Shield**
     - AWS에서 실행되는 application을 보호하는 관리형 DDoS 공격 방지 service
-- AWS 비용 관리 서비스
+
   ### AWS 비용 관리 서비스
+
   - **AWS 비용 및 사용 보고서**
     - 보고서에는 AWS service 요금 및 예약에 대한 추가 메타데이터를 비롯하여 사용 가능한 가장 포괄적인 AWS 비용 및 사용량 데이터 세트가 포함됨
   - **AWS 예산**
     - AWS 비용 또는 상죵량이 예산 금액을 초과하거나 초과할 것으로 예상될 때 알려주는 사용자 지정 예산을 설정할 수 있음
   - **AWS Cost Explorer**
     - 사용이 쉬운 인터페이스를 통해 시간 경과에 따른 AWS 비용 및 사용량을 시각화하여 파악 및 관리할 수 있다.
-- AWS management & governance service
+
   ### AWS management & governance service
+
   - **AWS Management Console**
     - AWS 계정에 액세스 하기 위한 web 기반 사용자 인터페이스 service
   - **AWS config**
@@ -130,7 +136,9 @@ tags: AWS
     - workload를 검토하고 개선하는 데 도움
   - **AWS CloudTrail**
     - AWS 계정 전체에서 사용자 활동 및 API 사용을 추적
-- 용어 및 정의
+
+  ## 용어 및 정의
+
   > 워크로드(Workload) : 주어진 기간에 시스템에 의해 실행되어야 할 작업의 할당량을 의미한다.
   > 프로비저닝(Provisioning) : 어떤 종류의 서비스든 사용자의 요구에 맞게 시스템 자체를 제공 하는 것을 provisioning이라고 하며 제공해줄 수 있는 것은 인프라 자원이나 서비스, 또는 장비가 될 수도 있다.
   > Content Delivery Network(CDN) : 데이터 사용량이 많은 애플리케이션의 웹 페이지 로드 속도를 높이는 상호 연결된 서버 네트워크이다

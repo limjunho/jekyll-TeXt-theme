@@ -1,11 +1,12 @@
 ---
-title: AWS 클라우드 보안
+title: module 4(AWS 클라우드 보안)
 tags: AWS(Cloud_Foundations)
 ---
 
 ## Summry
 
-본 문서에서는 AWS Academy Cloud Foundations module 3(AWS 글로벌 인프라 개요, AWS 서비스 소개)를 정리한다. 서비스 별 기능과 개요에 대해 정리된 문서이므로 해당 서비스를 사용하기 위해선 AWS 가이드를 참조할 것
+본 문서에서는 AWS Academy Cloud Foundations module 4(AWS 클라우드 보안)를 정리한다.  
+서비스 별 기능과 개요에 대해 정리된 문서이므로 해당 서비스를 사용하기 위해선 AWS 가이드를 참조할 것
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

@@ -1,5 +1,5 @@
 ---
-title: module module 10(자동 조정 및 모니터링)
+title: module 10(자동 조정 및 모니터링)
 tags: AWS(Cloud_Foundations)
 ---
 

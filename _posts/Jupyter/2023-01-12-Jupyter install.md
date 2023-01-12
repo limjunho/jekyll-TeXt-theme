@@ -1,5 +1,5 @@
 ---
-title: Jupyer 개요 및 설치
+title: Jupyter 개요 및 설치
 tags: Jupyter
 ---
 

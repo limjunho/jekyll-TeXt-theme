@@ -1,11 +1,11 @@
 ---
-title: Jupyter 개요 및 설치
+title: Jupyter Notebook 개요 및 설치
 tags: Jupyter
 ---
 
 ## Summry
 
-본 문서에서는 API를 호출하는 Client의 IP Address를 수집하는 방법을 정리한다.
+본 문서에서는 Jupyter Notebook의 개요를 설명하고 설치 방법을 정리한다.
 
 [send me email](mailto:jewel7492@gmail.com) if you have any questions.
 

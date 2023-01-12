@@ -1,6 +1,6 @@
 ---
-title: Springboot API 호출하는 Client IP 수집하기
-tags: Springboot
+title: Jupyer 개요 및 설치
+tags: Jupyter
 ---
 
 ## Summry

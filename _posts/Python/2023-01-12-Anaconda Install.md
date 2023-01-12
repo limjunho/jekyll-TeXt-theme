@@ -29,7 +29,7 @@ tags: Python Jupyter
 
 ### Install
 
-[Anaconda | Anaconda Distribution](https://www.anaconda.com/products/distribution)
+[Anaconda - Anaconda Distribution](https://www.anaconda.com/products/distribution)
 
 - Window - 파이썬이 이미 설치된 경우 반드시 삭제 후 아나콘다 설치
     - 중복 설치 시 환경 변수 충돌 등 문제 발생 소지가 있음.

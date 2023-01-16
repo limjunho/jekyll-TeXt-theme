@@ -31,6 +31,7 @@ tags: AWS
 
 1. 체크포인트 저장
     - **Amazon SageMaker는 학습 스크립트에서 생성된 체크포인트 파일을 Amazon S3에 자동으로 백업하고 동기화**
+    - **작업이 시작된 후 S3 폴더에 추가된 체크포인트는 훈련 컨테이너에 복사되지 않는다. 또한 SageMaker는 훈련 중에 컨테이너에서 S3로 새 체크포인트를 기록한다.**
     - 로컬 체크포인트 파일 경로( `/opt/ml/checkpoints`기본값)를 가져오고 최신 체크포인트 및 관련 epoch 번호에서 로드된 모델을 반환. 체크포인트 파일 default path : `/opt/ml/checkpoints`, 아래 구현 예시 참조
         
         ```python
@@ -108,3 +109,7 @@ tags: AWS
 [Managed Spot Training in Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html)
 
 [A quick guide to using Spot instances with Amazon SageMaker](https://towardsdatascience.com/a-quick-guide-to-using-spot-instances-with-amazon-sagemaker-b9cfb3a44a68)
+
+[sagemaker-spot-training - github](https://github.com/shashankprasanna/sagemaker-spot-training)
+
+[Use Checkpoints in Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/model-checkpoints.html)

@@ -18,7 +18,7 @@ tags: AWS Springboot
 
 ## ACM(Amazon Certificate Manager)
 
-AWS Certificate Manager(ACM)를 사용하면 AWS 서비스 및 연결된 내부 리소스에 사용할 공인 및 사설 SSL/TLS 인증서를 프로비저닝, 관리 및 배포할 수 있다.  
+**AWS Certificate Manager(ACM)를 사용하면 AWS 서비스 및 연결된 내부 리소스에 사용할 공인 및 사설 SSL/TLS 인증서를 프로비저닝, 관리 및 배포할 수 있다.**  
 ACM은 SSL/TLS 인증서를 구매, 업로드 및 갱신하는 데 드는 시간 소모적인 수동 프로세스를 대신 처리해준다.
 
 ### 기능 및 비용
@@ -138,7 +138,7 @@ AWS Certificate Manager는 웹 사이트 또는 애플리케이션를 위한 SSL
 
 ![그림16](/assets/AWS/ACM_ALB/16.png)
 
-* Target group Basic Configuration
+* **Target group Basic Configuration**
     * EC2 Instance가 타겟이므로 Instance를 선택
 
 ![그림17](/assets/AWS/ACM_ALB/17.png)
@@ -195,8 +195,6 @@ AWS Certificate Manager는 웹 사이트 또는 애플리케이션를 위한 SSL
     * 해당 api를 추가해 배포해야 health checks가 정상적으로 가능하다.
 
 ```java
-package com.arot.gradle.vss_backend.controller.AWS;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

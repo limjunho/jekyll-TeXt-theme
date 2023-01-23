@@ -17,7 +17,7 @@ tags: AWS
 
 1. **스팟 인스턴스에 연결된 모든 볼륨의 스냅샷을 정기적으로 생성**
    - 정기적으로 생성된 스냅샷을 S3등 저렴한 스토리지에 보관하다가 새 스팟 인스턴스를 실행하거나 하게 되면 스냅샷을 프로비저닝하여 사용
-   - 고려 사항
+   - **고려 사항**
      1. 루트 디바이스 역할을 하는 EBS 볼륨의 스냅샷을 생성할 때는 인스턴스를 중지한 후 스냅샷을 생성
      2. 크기가 큰 최초의 스냅샷이나 변경된 블록이 많은 후속 스냅샷의 경우 몇 시간씩 시간이 걸릴 수 있다.
      3. 스냅샷은 snapshot 명령을 실행할 때 Amazon EBS 볼륨에 기록된 데이터만 캡처합니다. 이때 애플리케이션이나 운영 체제에 의해 캐시된 데이터가 제외될 수 있다.
@@ -29,10 +29,10 @@ tags: AWS
 
 ## 중단 대처
 
-1. Auto Scaling Group을 사용하여 스팟이 중단되면 대체 인스턴스 시작
-2. 로드 밸런서에서 등록 해제
+1. **Auto Scaling Group을 사용하여 스팟이 중단되면 대체 인스턴스 시작**
+2. **로드 밸런서에서 등록 해제**
    - 다른 인스턴스로 트래픽 분산
-3. Spot hibernation mode
+3. **Spot hibernation mode**
    - 최대 절전모드로 대기, 추후 중지된 부분부터 시작(EC2만 사용 가능)
 
 - Auto Scaling Group, Load Balancer를 사용하여 중단에 대처하는 사례는 Reference를 참고
@@ -69,7 +69,7 @@ Lmbda SnapStart는 이 과정을 제거하기 위해 최초 초기화 시 메모
 
 [Amazon Elastic File System 이란 무엇입니까?](https://docs.aws.amazon.com/ko_kr/efs/latest/ug/whatisefs.html)
 
-[Amazon EC2 스팟 인스턴스로 확장성 높은 웹 애플리케이션 운영하기 | Amazon Web Services](https://aws.amazon.com/ko/blogs/korea/running-high-scale-web-on-spot-instances/)
+[Amazon EC2 스팟 인스턴스로 확장성 높은 웹 애플리케이션 운영하기 - Amazon Web Services](https://aws.amazon.com/ko/blogs/korea/running-high-scale-web-on-spot-instances/)
 
 [Amazon EBS 스냅샷](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/EBSSnapshots.html)
 
@@ -79,9 +79,9 @@ Lmbda SnapStart는 이 과정을 제거하기 위해 최초 초기화 시 메모
 
 ### AWS Lambda SnapStart
 
-[AWS Lambda SnapStart - 함수 실행 속도 및 성능 가속화 기능 | Amazon Web Services](https://aws.amazon.com/ko/blogs/korea/new-accelerate-your-lambda-functions-with-lambda-snapstart/)
+[AWS Lambda SnapStart : 함수 실행 속도 및 성능 가속화 기능 - Amazon Web Services](https://aws.amazon.com/ko/blogs/korea/new-accelerate-your-lambda-functions-with-lambda-snapstart/)
 
-[Starting up faster with AWS Lambda SnapStart | Amazon Web Services](https://aws.amazon.com/ko/blogs/compute/starting-up-faster-with-aws-lambda-snapstart/)
+[Starting up faster with AWS Lambda SnapStart - Amazon Web Services](https://aws.amazon.com/ko/blogs/compute/starting-up-faster-with-aws-lambda-snapstart/)
 
 [AWS re:Invent 2022 - AWS Lambda SnapStart: Fast cold starts for your Java functions (SVS320)](https://www.youtube.com/watch?v=ZbnAithBNYY&ab_channel=AWSEvents)
 

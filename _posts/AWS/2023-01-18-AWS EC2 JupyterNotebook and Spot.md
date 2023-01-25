@@ -24,6 +24,8 @@ tags: AWS
 7. 노트북용 디렉터리 만들기
 8. EC2 Jupyter 서버에 연결
 
+[Ubuntu Jupyter Install](https://limjunho.github.io/2023/01/25/Ubuntu-Jupyter-install.html)
+
 자세한 과정은 [Running Jupyter Notebook on an EC2 Server](https://dataschool.com/data-modeling-101/running-jupyter-notebook-on-an-ec2-server/) 참고
 
 ## Jupyter Notebook에서 Spot Instance 점유하기

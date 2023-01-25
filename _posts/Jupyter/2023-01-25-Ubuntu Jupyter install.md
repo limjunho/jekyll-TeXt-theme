@@ -76,6 +76,7 @@ python3
 ```
 
 * jupyter config 생성 및 수정
+
 ```bash
 jupyter notebook --generate-config 
 

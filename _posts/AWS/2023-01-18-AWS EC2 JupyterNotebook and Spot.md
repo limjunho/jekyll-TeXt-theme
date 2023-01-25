@@ -1,6 +1,6 @@
 ---
 title: EC2 & JupyterNotebook 에서 Spot Instance 점유하기
-tags: AWS
+tags: AWS Jupyter
 ---
 
 ## Summry

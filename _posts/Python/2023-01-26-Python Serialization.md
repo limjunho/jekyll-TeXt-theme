@@ -69,7 +69,8 @@ dill 은 파이썬 객체를 직렬화 및 역직렬화하기 위한 python Pi
 - none, type, bool, int, float, complex, bytes, str,
 - tuple, list, dict, file, buffer, builtin,
 - python classes, namedtuples, dataclasses, metaclasses,
-- instances of classes,set, frozenset, array, functions, exceptions
+- instances of classes,
+- set, frozenset, array, functions, exceptions
 
 dill은 pickle과 달리 더 많은 표준 유형을 pickle할 수 있다.
 

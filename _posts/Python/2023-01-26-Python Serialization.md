@@ -39,8 +39,6 @@ ex) 훈련 단계 후 신경망의 상태를 저장하여 나중에 훈련을 �
 - classes accessible from the top level of a module;
 - instances of such classes whose the result of calling `__getstate__()` is picklable (see section Pickling Class Instances for details).
 
-</br>
-
 - pickle 은 잘못되거나 악의적으로 구성된 데이터로부터 안전하지 않다. unpickle한 데이터가 신뢰할 수 있는 출처에서 온 것인지 여부를 결정하는 것은 사용자에게 맡겨져 있다.
 
 ### how to use
@@ -66,8 +64,6 @@ dill 은 파이썬 객체를 직렬화 및 역직렬화하기 위한 python Pi
 
 - **dill 은 단일 명령으로 인터프리터 세션의 상태를 저장하는 기능을 제공한다. 따라서 인터프리터 세션을 저장하고, 인터프리터를 닫고, 피클된 파일을 다른 컴퓨터로 전송하고, 새 인터프리터를 열고, 세션을 피클 해제하여 원래 인터프리터 세션의 '저장된' 상태에서 계속할 수 있다.**
 
-</br>
-
 아래 목록들을 pickle할 수 있다.
 
 - none, type, bool, int, float, complex, bytes, str,
@@ -91,8 +87,6 @@ dill은 다음과 같은 기능을 제공한다.
 - save and load python interpreter sessions
 - save and extract the source code from functions and classes
 - interactively diagnose pickling errors
-
-</br>
 
 - dill은 잘못되거나 악의적으로 구성된 데이터로부터 안전하지 않다. unpickle한 데이터가 신뢰할 수 있는 출처에서 온 것인지 여부를 결정하는 것은 사용자에게 맡겨져 있다.
 

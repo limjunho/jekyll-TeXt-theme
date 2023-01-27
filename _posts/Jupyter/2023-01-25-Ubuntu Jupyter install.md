@@ -102,7 +102,7 @@ jupyter notebook --config /home/ubuntu/.jupyter/jupyter_notebook_config.py
 OSError: [Errno 99] Cannot assign requested address가 발생한다면 아래 명령으로 시작
 
 ```bash
-jupyter notebook –ip=0.0.0.0 –port=8888 –allow-root
+jupyter notebook –-ip=0.0.0.0 –-port=8888 –allow-root
 ```
 
 ## Reference

@@ -88,8 +88,8 @@ sudo vi /home/ubuntu/.jupyter/jupyter_notebook_config.py
 ```
 c = get_config()
 c.NotebookApp.password = u'암호화된 비밀번호'
-c.NotebookApp.ip = 'IP'
-c.NotebookApp.notebook_dir = '/home/ubuntu/jupyter'
+c.NotebookApp.ip = 'IP 접속 규칙(모두 허용 : 0.0.0.0)'
+c.NotebookApp.notebook_dir = '/home/ubuntu/jupyter(주피터 노트북 시작 경로, 이 경로로 노트북이 열림)'
 c.NotebookApp.allow_origin = '*'
 ```
 
